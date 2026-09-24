@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ха-Хачапури — Корзина</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.wrap{padding:28px 40px 52px}
+
+/* layout: left panel + right map */
+.layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  align-items:start;
+}
+
+/* ── LEFT PANEL ── */
+.panel{
+  background:var(--teal);
+  border-radius:var(--r);
+  padding:28px 22px 24px;
+}
+.panel-title{
+  font-family:var(--font-sc);font-size:1.8rem;
+  color:var(--card);text-align:center;
+  margin-bottom:18px;
+}
+
+/* order number */
+.order-box{text-align:center;margin-bottom:4px}
+.order-badge{
+  display:inline-block;
+  border:2px solid var(--card);border-radius:26px;
+  padding:7px 30px;
+  font-family:var(--font-h);font-size:.95rem;font-weight:700;
+  color:var(--card);
+}
+.order-id{
+  text-align:center;font-size:.74rem;
+  color:rgba(240,230,211,.7);margin-bottom:16px;
+}
+
+/* table */
+.ctable{width:100%;border-collapse:collapse;margin-bottom:12px}
+.ctable thead th{
+  font-family:var(--font-h);font-size:.75rem;font-weight:600;
+  color:var(--card);text-align:left;
+  padding:5px 6px;
+  border-bottom:1px solid rgba(255,255,255,.28);
+  text-transform:uppercase;letter-spacing:.05em;
+}
+.ctable tbody td{
+  padding:7px 6px;
+  font-size:.85rem;color:var(--card);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.ctable tbody tr:last-child td{border-bottom:none}
+.ql{
+  color:var(--card);text-decoration:underline;
+  cursor:pointer;font-size:.76rem;white-space:nowrap;
+}
+
+/* totals */
+.totals{
+  border-top:1px solid rgba(255,255,255,.28);
+  padding-top:10px;margin-bottom:18px;
+}
+.trow{display:flex;justify-content:space-between;margin-bottom:5px}
+.trow span{font-size:.85rem;color:var(--card)}
+.trow.promo .tv{color:#FFD040;font-weight:600}
+.trow.final{
+  border-top:1px solid rgba(255,255,255,.28);
+  padding-top:8px;margin-top:3px;
+}
+.trow.final span{font-size:.92rem;font-weight:700}
+
+/* section label */
+.slbl{
+  font-family:var(--font-h);font-size:.88rem;font-weight:700;
+  color:var(--card);margin-bottom:10px;
+}
+
+/* payment */
+.pay-row{display:flex;gap:10px;margin-bottom:20px}
+.pay-opt{
+  flex:1;
+  background:var(--card);
+  border:2.5px solid transparent;
+  border-radius:11px;
+  padding:11px 8px;
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  cursor:pointer;transition:border-color .18s;
+  font-family:var(--font-h);font-size:.78rem;font-weight:600;color:var(--txt);
+}
+.pay-opt:hover,.pay-opt.sel{border-color:var(--teal-dk)}
+
+/* delivery */
+.del-col{display:flex;flex-direction:column;gap:8px;margin-bottom:6px}
+.del-btn{
+  background:rgba(255,255,255,.2);
+  border:2px solid transparent;border-radius:10px;
+  padding:11px 18px;
+  font-family:var(--font-h);font-size:.88rem;
+  color:var(--card);cursor:pointer;text-align:center;
+  transition:background .18s,border-color .18s;
+}
+.del-btn:hover,.del-btn.sel{background:rgba(255,255,255,.32);border-color:var(--card)}
+.del-hint{font-size:.72rem;color:rgba(240,230,211,.6);margin-bottom:20px}
+
+/* actions */
+.actions{display:flex;gap:10px}
+.btn-trash{
+  background:var(--red);border:none;border-radius:12px;
+  padding:13px 16px;color:#fff;cursor:pointer;
+  display:flex;align-items:center;transition:background .18s;
+}
+.btn-trash:hover{background:var(--red-dk)}
+.btn-order{
+  flex:1;background:var(--red);border:none;border-radius:12px;
+  padding:13px 20px;
+  font-family:var(--font-h);font-size:1.05rem;font-weight:600;
+  color:#fff;cursor:pointer;transition:background .18s;
+}
+.btn-order:hover{background:var(--red-dk)}
+
+/* ── RIGHT MAP ── */
+.map-box{
+  border-radius:var(--r);overflow:hidden;
+  position:relative;min-height:530px;
+  background:#D4DFDA;box-shadow:var(--sh);
+}
+.map-box iframe{
+  width:100%;height:100%;min-height:530px;
+  border:none;display:block;
+}
+.btn-sel{
+  position:absolute;bottom:20px;right:20px;
+  background:rgba(20,20,20,.84);color:#fff;
+  font-family:var(--font-h);font-size:.95rem;font-weight:600;
+  padding:13px 26px;border-radius:12px;border:none;
+  cursor:pointer;backdrop-filter:blur(6px);
+  transition:background .18s;
+}
+.btn-sel:hover{background:rgba(0,0,0,.96)}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="index.html" class="nav-logo"><div class="ico">🫓</div><span>Ха-Хачапури</span></a>
+  <nav class="nav-links">
+    <a href="about.html">О нас</a>
+    <a href="news.html">Акции и новости</a>
+  </nav>
+  <a href="cart.html" class="nav-cart">Корзина</a>
+  <div class="lang"><span class="on">RU</span><span class="off">EN</span></div>
+</header>
+
+<main>
+<div class="wrap">
+<div class="layout">
+
+  <!-- ═══ LEFT PANEL ═══ -->
+  <div class="panel">
+    <h2 class="panel-title">Корзина</h2>
+
+    <div class="order-box">
+      <div class="order-badge">Заказ №098</div>
+    </div>
+    <div class="order-id">ID095501226975</div>
+
+    <!-- items table -->
+    <table class="ctable">
+      <thead>
+        <tr>
+          <th>список</th>
+          <th>цена</th>
+          <th>кол-во</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Суп</td>
+          <td>390.0 ₽× 1</td>
+          <td></td>
+          <td><span class="ql">изменить кол-во</span></td>
+        </tr>
+        <tr>
+          <td>Хинкали</td>
+          <td>60.0 ₽× 10 шт</td>
+          <td></td>
+          <td><span class="ql">изменить кол-во</span></td>
+        </tr>
+        <tr>
+          <td>Салат</td>
+          <td>390.0 ₽× 1 шт</td>
+          <td></td>
+          <td><span class="ql">изменить кол-во</span></td>
+        </tr>
+        <tr>
+          <td>Закуска</td>
+          <td>390.0 ₽× 1 шт</td>
+          <td></td>
+          <td><span class="ql">изменить кол-во</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- totals -->
+    <div class="totals">
+      <div class="trow">
+        <span>Общая цена заказа</span>
+        <span class="tv">1360.0 ₽</span>
+      </div>
+      <div class="trow promo">
+        <span>Акции</span>
+        <span class="tv">применена скидка 30%</span>
+      </div>
+      <div class="trow final">
+        <span>Итоговая цена</span>
+        <span class="tv">952.0 ₽</span>
+      </div>
+    </div>
+
+    <!-- payment -->
+    <div class="slbl">Оплата</div>
+    <div class="pay-row">
+      <!-- СБП -->
+      <button class="pay-opt sel" onclick="selPay(this)">
+        <svg width="30" height="20" viewBox="0 0 30 20" fill="none">
+          <rect width="30" height="20" rx="4" fill="white"/>
+          <text x="15" y="13.5" text-anchor="middle" font-family="Oswald,sans-serif"
+                font-size="7" fill="#0060AA" font-weight="700">СБП</text>
+        </svg>
+      </button>
+      <!-- Pay -->
+      <button class="pay-opt" onclick="selPay(this)">
+        <svg width="30" height="20" viewBox="0 0 30 20" fill="none">
+          <rect width="30" height="20" rx="4" fill="white"/>
+          <circle cx="11" cy="10" r="6" fill="#4CAF50" opacity=".9"/>
+          <circle cx="19" cy="10" r="6" fill="#FF9800" opacity=".9"/>
+          <text x="15" y="13.5" text-anchor="middle" font-family="Roboto,sans-serif"
+                font-size="6" fill="white" font-weight="700">Pay</text>
+        </svg>
+      </button>
+      <!-- Card -->
+      <button class="pay-opt" onclick="selPay(this)">
+        <svg width="30" height="20" viewBox="0 0 30 20" fill="none">
+          <rect x=".5" y=".5" width="29" height="19" rx="3.5" stroke="#999" fill="white"/>
+          <rect x="0" y="6" width="30" height="5" fill="#CCC"/>
+          <rect x="3" y="14" width="8" height="3" rx="1" fill="#CCC"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- delivery -->
+    <div class="slbl">Способ получения</div>
+    <div class="del-col">
+      <button class="del-btn" onclick="selDel(this)">Самовывоз</button>
+      <button class="del-btn" onclick="selDel(this)">Доставка</button>
+    </div>
+    <p class="del-hint">*На карте выберите предприятие или адрес доставки</p>
+
+    <!-- action buttons -->
+    <div class="actions">
+      <button class="btn-trash" title="Очистить корзину">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+             stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="3 6 5 6 21 6"/>
+          <path d="M19 6l-1 14H6L5 6"/>
+          <path d="M10 11v6M14 11v6"/>
+          <path d="M9 6V4h6v2"/>
+        </svg>
+      </button>
+      <button class="btn-order">Оформить</button>
+    </div>
+  </div><!-- /panel -->
+
+  <!-- ═══ RIGHT MAP ═══ -->
+  <div class="map-box">
+    <iframe
+      src="https://www.openstreetmap.org/export/embed.html?bbox=40.88%2C57.59%2C41.03%2C57.69&layer=mapnik"
+      title="Карта доставки"
+      loading="lazy">
+    </iframe>
+    <button class="btn-sel">Выбрать</button>
+  </div>
+
+</div><!-- /layout -->
+</div><!-- /wrap -->
+</main>
+
+<footer>
+  <div class="ft-logo"><div class="ico">🫓</div><span>Ха-Хачапури</span></div>
+  <div class="ft-links">
+    <a href="about.html">О нас</a>
+    <a href="news.html">Акции и новости</a>
+  </div>
+  <div class="ft-social">
+    <a href="#"><svg class="icon-vk" viewBox="0 0 24 24"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.08 13.45h-1.63c-.62 0-.81-.49-1.92-1.6-1-.94-1.42-.94-1.67-.94-.34 0-.43.09-.43.57v1.46c0 .4-.13.64-1.2.64-1.77 0-3.73-1.07-5.11-3.07C4.38 10.22 4 8.4 4 8.07c0-.25.09-.49.57-.49h1.62c.43 0 .59.19.75.65.83 2.39 2.22 4.49 2.79 4.49.21 0 .31-.1.31-.64V9.88c-.07-1.15-.67-1.25-.67-1.66 0-.2.16-.4.43-.4h2.56c.36 0 .49.19.49.62v3.35c0 .36.16.49.27.49.21 0 .4-.13.8-.53 1.24-1.39 2.12-3.53 2.12-3.53.12-.25.31-.48.74-.48h1.63c.49 0 .6.25.49.59-.21 1-.24.95-.68 1.76l-.9 1.47c-.18.3-.25.43 0 .77.18.25.77.77 1.16 1.24.72.83 1.27 1.53 1.42 2.01.15.46-.08.7-.57.7z"/></svg></a>
+    <a href="#"><svg class="icon-tg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+  </div>
+</footer>
+
+<script>
+function selPay(el){
+  document.querySelectorAll('.pay-opt').forEach(b=>b.classList.remove('sel'));
+  el.classList.add('sel');
+}
+function selDel(el){
+  document.querySelectorAll('.del-btn').forEach(b=>b.classList.remove('sel'));
+  el.classList.add('sel');
+}
+</script>
+</body>
+</html>

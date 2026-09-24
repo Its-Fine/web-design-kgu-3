@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Marck+Script&family=Oswald:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+  --bg-grad: linear-gradient(180deg, #AB4336 0%, #CB8A67 50%, #CCBAAC 100%);
+  --nav-bg:   #F5EDE0;
+  --teal:     #4A8A7B;
+  --teal-dk:  #3A6E62;
+  --card:     #F0E6D3;
+  --card2:    #E4D8C8;
+  --ph:       #C8C8C8;   /* placeholder grey */
+  --red:      #AB4336;
+  --red-dk:   #8B3820;
+  --txt:      #1E1E1E;
+  --txt-lt:   #666;
+  --r:        16px;
+  --sh:       0 4px 18px rgba(0,0,0,0.14);
+  --font-sc:  'Marck Script', cursive;
+  --font-h:   'Oswald', sans-serif;
+  --font-b:   'Roboto', sans-serif;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-b);
+  background:var(--bg-grad);
+  background-attachment:fixed;
+  color:var(--txt);
+  min-height:100vh;
+  display:flex;flex-direction:column;
+}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+img{display:block;max-width:100%}
+main{flex:1}
+
+/* ── NAVBAR ── */
+.nav{
+  background:var(--nav-bg);
+  padding:10px 40px;
+  display:flex;align-items:center;
+  border-bottom:1px solid rgba(0,0,0,.07);
+  position:sticky;top:0;z-index:100;
+}
+.nav-logo{display:flex;align-items:center;gap:10px;margin-right:auto}
+.nav-logo .ico{
+  width:52px;height:52px;border-radius:50%;
+  background:#E8C98A;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;flex-shrink:0;
+}
+.nav-logo span{font-family:var(--font-sc);font-size:1.6rem;color:var(--txt)}
+.nav-links{display:flex;gap:36px}
+.nav-links a{font-family:var(--font-h);font-size:1rem;color:var(--txt);transition:color .2s}
+.nav-links a:hover{color:var(--red)}
+.nav-cart{
+  background:var(--teal);color:#fff;
+  font-family:var(--font-h);font-weight:500;font-size:.95rem;
+  padding:8px 26px;border-radius:24px;border:none;cursor:pointer;
+  margin-left:28px;transition:background .2s;
+  text-decoration:none;display:inline-block;
+}
+.nav-cart:hover{background:var(--teal-dk)}
+.lang{display:flex;margin-left:14px}
+.lang span{
+  font-family:var(--font-h);font-weight:700;font-size:.92rem;
+  padding:6px 11px;border-radius:6px;cursor:pointer;line-height:1;
+}
+.lang .on {background:var(--red-dk);color:#fff}
+.lang .off{background:#ABABAB;color:#fff}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--nav-bg);
+  border-top:1px solid rgba(0,0,0,.07);
+  padding:26px 40px;
+  display:flex;align-items:center;gap:60px;
+}
+.ft-logo{display:flex;align-items:center;gap:10px}
+.ft-logo .ico{
+  width:60px;height:60px;border-radius:50%;
+  background:#E8C98A;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;flex-shrink:0;
+}
+.ft-logo span{font-family:var(--font-sc);font-size:1.4rem}
+.ft-links{display:flex;flex-direction:column;gap:8px}
+.ft-links a{font-family:var(--font-h);font-size:.92rem;color:var(--txt);transition:color .2s}
+.ft-links a:hover{color:var(--red)}
+.ft-social{display:flex;gap:10px;margin-left:auto}
+.ft-social a{
+  width:38px;height:38px;border-radius:8px;
+  background:var(--txt);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  transition:background .2s;
+}
+.ft-social a:hover{background:var(--red)}
+
+/* ── BADGE (teal pill) ── */
+.badge{
+  display:inline-block;
+  background:var(--teal);color:#fff;
+  font-family:var(--font-h);font-size:.78rem;font-weight:600;
+  letter-spacing:.07em;text-transform:uppercase;
+  padding:5px 18px;border-radius:20px;margin-bottom:18px;
+}
+
+/* ── PLACEHOLDER BOX (grey with X) ── */
+.ph{
+  background:var(--ph);
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.ph::before,.ph::after{
+  content:'';position:absolute;
+  background:#A8A8A8;height:2px;
+  width:38%;transform-origin:center;
+}
+.ph::before{transform:rotate(45deg)}
+.ph::after {transform:rotate(-45deg)}
+
+/* ── CARD ── */
+.card{
+  background:var(--card);border-radius:var(--r);
+  overflow:hidden;box-shadow:var(--sh);
+  transition:transform .2s;
+}
+.card:hover{transform:translateY(-3px)}
+.card .ci{width:100%;aspect-ratio:4/3}
+.card .cb{padding:14px 16px 18px}
+.card .ct{font-family:var(--font-h);font-size:.92rem;font-weight:600;margin-bottom:4px}
+.card .cd{font-size:.8rem;color:var(--txt-lt);line-height:1.5}
+
+/* ── SVG ICONS ── */
+.icon-vk,.icon-tg{width:18px;height:18px;fill:currentColor}
