@@ -38,6 +38,20 @@
 .nc .nd{font-size:.82rem;color:var(--txt-lt);line-height:1.5}
 
 .divider{border:none;border-top:2px solid rgba(255,255,255,.18);margin:6px 0 28px}
+
+/* видео-блок */
+.video-wrap{
+  background:var(--card);border-radius:var(--r);
+  padding:18px;box-shadow:var(--sh);margin-bottom:34px;
+}
+.video-wrap .vframe{
+  position:relative;width:100%;aspect-ratio:16/9;
+  border-radius:12px;overflow:hidden;
+}
+.video-wrap .vframe iframe{
+  position:absolute;top:0;left:0;width:100%;height:100%;border:0;
+}
+.video-caption{margin-top:12px;font-size:.85rem;color:var(--txt-lt)}
 </style>
 </head>
 <body>
@@ -46,7 +60,9 @@
   <a href="index.html" class="nav-logo"><div class="ico">🫓</div><span>Ха-Хачапури</span></a>
   <nav class="nav-links">
     <a href="about.html">О нас</a>
-    <a href="news.html">Акции и новости</a>
+    <a href="news.html" class="act">Акции и новости</a>
+    <a href="delivery.html">Доставка и оплата</a>
+    <a href="contact.html">Обратная связь</a>
   </nav>
   <a href="cart.html" class="nav-cart">Корзина</a>
   <div class="lang"><span class="on">RU</span><span class="off">EN</span></div>
@@ -56,19 +72,74 @@
 <div class="wrap">
 
   <!-- АКЦИИ -->
-  <div class="grid2">
-    <div class="nc"><div class="ni"></div><div class="nb"><div class="nn">название</div><div class="nd">описание</div></div></div>
-    <div class="nc"><div class="ni"></div><div class="nb"><div class="nn">название</div><div class="nd">описание</div></div></div>
-  </div>
+  <section id="promo" aria-labelledby="promo-title">
+    <div class="badge" id="promo-title">Акции</div>
+    <div class="grid2">
+      <article class="nc">
+        <div class="ni"></div>
+        <div class="nb">
+          <div class="nn">Скидка <mark>−30%</mark> на хинкали по вторникам</div>
+          <div class="nd">Каждый <strong>вторник</strong> все виды хинкали со скидкой 30% при заказе от 20 штук.
+          <small>Акция действует до 31 декабря.</small></div>
+        </div>
+      </article>
+      <article class="nc">
+        <div class="ni"></div>
+        <div class="nb">
+          <div class="nn">Бесплатная доставка от <mark>1000 ₽</mark></div>
+          <div class="nd">При заказе от 1000 рублей доставка <em>бесплатна</em> в пределах города.
+          <small>Подробности уточняйте у оператора.</small></div>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <hr class="divider">
 
   <!-- НОВОСТИ -->
-  <div class="badge">НОВОСТИ</div>
-  <div class="grid2">
-    <div class="nc"><div class="ni"></div><div class="nb"><div class="nn">название</div><div class="nd">описание</div></div></div>
-    <div class="nc"><div class="ni"></div><div class="nb"><div class="nn">название</div><div class="nd">описание</div></div></div>
-  </div>
+  <section id="news" aria-labelledby="news-title">
+    <div class="badge" id="news-title">Новости</div>
+    <div class="grid2">
+      <article class="nc">
+        <div class="ni"></div>
+        <div class="nb">
+          <div class="nn">Открылся новый зал</div>
+          <div class="nd">Мы расширились! Теперь у нас <strong>вдвое больше мест</strong> для гостей
+          и уютная летняя веранда. <small>01.09.2025</small></div>
+        </div>
+      </article>
+      <article class="nc">
+        <div class="ni"></div>
+        <div class="nb">
+          <div class="nn">Новое постное меню</div>
+          <div class="nd">Добавили <em>более 10 новых постных блюд</em> — супы, салаты и выпечку
+          без мяса и молочных продуктов. <small>15.08.2025</small></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ВИДЕО СО СТОРОННЕГО РЕСУРСА -->
+  <section id="video" aria-labelledby="video-title">
+    <div class="badge" id="video-title">Видео: как готовят хинкали</div>
+    <div class="video-wrap">
+      <div class="vframe">
+        <iframe
+          src="https://www.youtube.com"
+          title="Как готовят хинкали — видео рецепт"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-caption">
+        <strong>Смотрите</strong>, как наши повара вручную лепят настоящие грузинские хинкали —
+        <em>без спешки, по старинному рецепту</em>. <small>Видео предоставлено сторонним ресурсом YouTube.</small>
+      </p>
+    </div>
+  </section>
 
 </div>
 </main>

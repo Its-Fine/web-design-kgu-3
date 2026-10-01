@@ -87,46 +87,91 @@
   <div class="hero"></div>
 
   <!-- КОНТАКТЫ -->
-  <div class="badge">Контакты</div>
-  <div class="contacts">
-    <div class="ct">телефон</div>
-    <div class="ct">Адрес</div>
-    <div class="ct">Почта</div>
-  </div>
+  <section id="contacts" aria-labelledby="contacts-title">
+    <div class="badge" id="contacts-title">Контакты</div>
+    <div class="contacts">
+      <div class="ct">Телефон<br><strong>+7 (900) 123-45-67</strong></div>
+      <div class="ct">Адрес<br><strong>г. Иваново, ул. Хачапурная, 3</strong></div>
+      <div class="ct">Почта<br><strong>info@ha-hachapuri.ru</strong></div>
+    </div>
+  </section>
 
   <!-- О НАС -->
-  <div class="badge">О нас</div>
-  <div class="grid2">
-    <div class="card"><div class="ci ph"></div><div class="cb"><div class="ct2">название</div><div class="cd">описание</div></div></div>
-    <div class="card"><div class="ci ph"></div><div class="cb"><div class="ct2">название</div><div class="cd">описание</div></div></div>
-    <div class="card"><div class="ci ph"></div><div class="cb"><div class="ct2">название</div><div class="cd">описание</div></div></div>
-    <div class="card"><div class="ci ph"></div><div class="cb"><div class="ct2">название</div><div class="cd">описание</div></div></div>
-  </div>
+  <section id="o-nas" aria-labelledby="o-nas-title">
+    <div class="badge" id="o-nas-title">О нас</div>
+    <div class="grid2">
+      <article class="card">
+        <div class="ci ph"></div>
+        <div class="cb">
+          <div class="ct2">Наша история</div>
+          <div class="cd"><em>«Ха-Хачапури»</em> открылся в 2021 году с простой идеей — готовить
+          <strong>настоящую грузинскую кухню</strong> так, как её готовят дома, в семье.</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ci ph"></div>
+        <div class="cb">
+          <div class="ct2">Наши продукты</div>
+          <div class="cd">Используем только <strong>свежие фермерские овощи</strong>, сыр
+          собственного производства и специи, привезённые <em>напрямую из Грузии</em>.</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ci ph"></div>
+        <div class="cb">
+          <div class="ct2">Наша команда</div>
+          <div class="cd">Повара с опытом более <mark>10 лет</mark> в национальной кухне готовят
+          каждое блюдо вручную, без заморозки и полуфабрикатов.</div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="ci ph"></div>
+        <div class="cb">
+          <div class="ct2">Доставка</div>
+          <div class="cd">Доставляем заказы по городу за <strong>40–60 минут</strong>.
+          <small>Подробности — на странице «Доставка и оплата».</small></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ДОПОЛНИТЕЛЬНО: интересный факт -->
+  <aside class="info-aside">
+    <p><strong>Знаете ли вы?</strong> Хинкали принято есть <em>руками</em>, держа за «хвостик» —
+    его по традиции не едят, он остаётся на тарелке. <mark>Хвостики не едят!</mark></p>
+    <p><small>Так можно посчитать, сколько хинкали съел гость 😊</small></p>
+  </aside>
 
   <!-- ОТЗЫВЫ -->
-  <div class="badge">Последние отзывы</div>
-  <div class="rev-outer">
-    <button class="arr arr-l" onclick="document.getElementById('rt').scrollBy({left:-240,behavior:'smooth'})">&#8592;</button>
-    <div class="rev-track" id="rt">
-      <div class="rev-card">
-        <div class="rev-head"><div class="rev-av"></div><span class="rev-name">имя</span></div>
-        <div class="rev-body">отзыв</div>
+  <section id="reviews" aria-labelledby="reviews-title">
+    <div class="badge" id="reviews-title">Последние отзывы</div>
+    <div class="rev-outer">
+      <button class="arr arr-l" onclick="document.getElementById('rt').scrollBy({left:-240,behavior:'smooth'})">&#8592;</button>
+      <div class="rev-track" id="rt">
+        <article class="rev-card">
+          <div class="rev-head"><div class="rev-av"></div><span class="rev-name">Анна</span></div>
+          <div class="rev-body"><em>«Очень вкусные хинкали, прямо как у бабушки в Грузии!»</em><br>
+          <small>12 сентября 2025</small></div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-head"><div class="rev-av"></div><span class="rev-name">Дмитрий</span></div>
+          <div class="rev-body"><em>«Хачапури по-аджарски — <strong>огонь</strong>, рекомендую всем!»</em><br>
+          <small>5 сентября 2025</small></div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-head"><div class="rev-av"></div><span class="rev-name">Мария</span></div>
+          <div class="rev-body"><em>«Доставка приехала быстро, всё ещё <strong>горячее</strong>».</em><br>
+          <small>28 августа 2025</small></div>
+        </article>
+        <article class="rev-card">
+          <div class="rev-head"><div class="rev-av"></div><span class="rev-name">Игорь</span></div>
+          <div class="rev-body"><em>«Лучшее постное меню в городе!»</em><br>
+          <small>14 августа 2025</small></div>
+        </article>
       </div>
-      <div class="rev-card">
-        <div class="rev-head"><div class="rev-av"></div><span class="rev-name">имя</span></div>
-        <div class="rev-body">отзыв</div>
-      </div>
-      <div class="rev-card">
-        <div class="rev-head"><div class="rev-av"></div><span class="rev-name">имя</span></div>
-        <div class="rev-body">отзыв</div>
-      </div>
-      <div class="rev-card">
-        <div class="rev-head"><div class="rev-av"></div><span class="rev-name">имя</span></div>
-        <div class="rev-body">отзыв</div>
-      </div>
+      <button class="arr arr-r" onclick="document.getElementById('rt').scrollBy({left:240,behavior:'smooth'})">&#8594;</button>
     </div>
-    <button class="arr arr-r" onclick="document.getElementById('rt').scrollBy({left:240,behavior:'smooth'})">&#8594;</button>
-  </div>
+  </section>
 
 </div>
 </main>
