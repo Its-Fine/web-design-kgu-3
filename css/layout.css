@@ -1,0 +1,166 @@
+/* Общий каркас: шапка и подвал (есть на каждой странице) */
+
+/* ── Шапка ── */
+.nav {
+  background: var(--nav-bg);
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+}
+
+.nav-logo .ico {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #E8C98A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.nav-logo span {
+  font-family: var(--font-sc);
+  font-size: 1.6rem;
+  color: var(--txt);
+}
+
+.nav-links {
+  display: flex;
+  gap: 36px;
+}
+
+.nav-links a {
+  font-family: var(--font-h);
+  font-size: 1rem;
+  color: var(--txt);
+  transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.act {
+  color: var(--red);
+}
+
+.nav-cart {
+  display: inline-block;
+  background: var(--teal);
+  color: #fff;
+  font-family: var(--font-h);
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 8px 26px;
+  border-radius: 24px;
+  margin-left: 28px;
+  transition: background 0.2s;
+}
+
+.nav-cart:hover {
+  background: var(--teal-dk);
+}
+
+.lang {
+  display: flex;
+  margin-left: 14px;
+}
+
+.lang span {
+  font-family: var(--font-h);
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 6px 11px;
+  border-radius: 6px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lang .on  { background: var(--red-dk); color: #fff; }
+.lang .off { background: #ABABAB;       color: #fff; }
+
+/* ── Подвал ── */
+footer {
+  background: var(--nav-bg);
+  border-top: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 26px 40px;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.ft-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ft-logo .ico {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #E8C98A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  flex-shrink: 0;
+}
+
+.ft-logo span {
+  font-family: var(--font-sc);
+  font-size: 1.4rem;
+}
+
+.ft-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ft-links a {
+  font-family: var(--font-h);
+  font-size: 0.92rem;
+  color: var(--txt);
+  transition: color 0.2s;
+}
+
+.ft-links a:hover {
+  color: var(--red);
+}
+
+.ft-social {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.ft-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background: var(--txt);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.ft-social a:hover {
+  background: var(--red);
+}
+
+.ft-social img {
+  width: 18px;
+  height: 18px;
+}

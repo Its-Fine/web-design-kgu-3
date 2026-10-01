@@ -4,76 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ха-Хачапури — О нас</title>
-<link rel="stylesheet" href="style.css">
-<style>
-.wrap{padding:28px 36px 52px}
-
-/* hero */
-.hero{
-  width:100%;height:360px;
-  background:var(--card);border-radius:var(--r);
-  position:relative;overflow:hidden;margin-bottom:26px;
-  box-shadow:var(--sh);
-}
-.hero::before,.hero::after{
-  content:'';position:absolute;
-  width:26%;height:2px;background:#B8B8B8;
-  top:50%;left:50%;transform-origin:center;
-}
-.hero::before{transform:translate(-50%,-50%) rotate(45deg)}
-.hero::after {transform:translate(-50%,-50%) rotate(-45deg)}
-
-/* contacts row */
-.contacts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:30px}
-.ct{
-  background:var(--ph);border-radius:var(--r);
-  padding:22px 16px;text-align:center;
-  font-family:var(--font-h);font-size:.92rem;color:var(--txt);
-  box-shadow:var(--sh);
-}
-
-/* about 2-col grid */
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:32px}
-
-/* reviews */
-.rev-outer{position:relative;margin-bottom:4px}
-.rev-track{
-  display:flex;gap:14px;
-  overflow-x:auto;scrollbar-width:none;padding:4px 0 8px;
-}
-.rev-track::-webkit-scrollbar{display:none}
-.rev-card{
-  flex:0 0 218px;min-height:90px;
-  background:var(--card);border-radius:14px;padding:14px 14px;
-  box-shadow:var(--sh);
-}
-.rev-head{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.rev-av{
-  width:34px;height:34px;border-radius:50%;
-  background:var(--red);flex-shrink:0;
-}
-.rev-name{font-family:var(--font-h);font-size:.88rem;font-weight:600}
-.rev-body{font-size:.8rem;color:var(--txt-lt);line-height:1.5}
-
-.arr{
-  position:absolute;top:50%;transform:translateY(-50%);
-  width:30px;height:30px;border-radius:50%;
-  background:rgba(0,0,0,.22);border:2px solid rgba(255,255,255,.6);
-  color:#fff;font-size:.95rem;
-  display:flex;align-items:center;justify-content:center;
-  cursor:pointer;z-index:2;transition:background .2s;
-}
-.arr:hover{background:rgba(0,0,0,.5)}
-.arr-l{left:-14px}
-.arr-r{right:-14px}
-</style>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages/about.css">
 </head>
 <body>
 
 <header class="nav">
-  <a href="index.html" class="nav-logo"><div class="ico">🫓</div><span>Ха-Хачапури</span></a>
+  <a href="index.html" class="nav-logo">
+    <div class="ico">🫓</div>
+    <span>Ха-Хачапури</span>
+  </a>
   <nav class="nav-links">
-    <a href="about.html">О нас</a>
+    <a href="about.html" class="act">О нас</a>
     <a href="news.html">Акции и новости</a>
     <a href="contact.html">Обратная связь</a>
   </nav>
@@ -85,15 +29,15 @@
 <div class="wrap">
 
   <!-- HERO -->
-  <div class="hero"></div>
+  <div class="hero ph"></div>
 
   <!-- КОНТАКТЫ -->
   <section id="contacts" aria-labelledby="contacts-title">
     <div class="badge" id="contacts-title">Контакты</div>
     <div class="contacts">
-      <div class="ct">Телефон<br><strong>+7 (900) 123-45-67</strong></div>
-      <div class="ct">Адрес<br><strong>г. Иваново, ул. Хачапурная, 3</strong></div>
-      <div class="ct">Почта<br><strong>info@ha-hachapuri.ru</strong></div>
+      <div class="contact-item">Телефон<br><strong>+7 (900) 123-45-67</strong></div>
+      <div class="contact-item">Адрес<br><strong>г. Иваново, ул. Хачапурная, 3</strong></div>
+      <div class="contact-item">Почта<br><strong>info@ha-hachapuri.ru</strong></div>
     </div>
   </section>
 
@@ -104,7 +48,7 @@
       <article class="card">
         <div class="ci ph"></div>
         <div class="cb">
-          <div class="ct2">Наша история</div>
+          <div class="ct">Наша история</div>
           <div class="cd"><em>«Ха-Хачапури»</em> открылся в 2021 году с простой идеей — готовить
           <strong>настоящую грузинскую кухню</strong> так, как её готовят дома, в семье.</div>
         </div>
@@ -112,7 +56,7 @@
       <article class="card">
         <div class="ci ph"></div>
         <div class="cb">
-          <div class="ct2">Наши продукты</div>
+          <div class="ct">Наши продукты</div>
           <div class="cd">Используем только <strong>свежие фермерские овощи</strong>, сыр
           собственного производства и специи, привезённые <em>напрямую из Грузии</em>.</div>
         </div>
@@ -120,7 +64,7 @@
       <article class="card">
         <div class="ci ph"></div>
         <div class="cb">
-          <div class="ct2">Наша команда</div>
+          <div class="ct">Наша команда</div>
           <div class="cd">Повара с опытом более <mark>10 лет</mark> в национальной кухне готовят
           каждое блюдо вручную, без заморозки и полуфабрикатов.</div>
         </div>
@@ -128,7 +72,7 @@
       <article class="card">
         <div class="ci ph"></div>
         <div class="cb">
-          <div class="ct2">Доставка</div>
+          <div class="ct">Доставка</div>
           <div class="cd">Доставляем заказы по городу за <strong>40–60 минут</strong>.
           <small>Подробности — на странице «Доставка и оплата».</small></div>
         </div>
@@ -147,7 +91,7 @@
   <section id="reviews" aria-labelledby="reviews-title">
     <div class="badge" id="reviews-title">Последние отзывы</div>
     <div class="rev-outer">
-      <button class="arr arr-l" onclick="document.getElementById('rt').scrollBy({left:-240,behavior:'smooth'})">&#8592;</button>
+      <button class="arr arr-l" data-scroll="-240" aria-label="Назад">&#8592;</button>
       <div class="rev-track" id="rt">
         <article class="rev-card">
           <div class="rev-head"><div class="rev-av"></div><span class="rev-name">Анна</span></div>
@@ -170,7 +114,7 @@
           <small>14 августа 2025</small></div>
         </article>
       </div>
-      <button class="arr arr-r" onclick="document.getElementById('rt').scrollBy({left:240,behavior:'smooth'})">&#8594;</button>
+      <button class="arr arr-r" data-scroll="240" aria-label="Вперёд">&#8594;</button>
     </div>
   </section>
 
@@ -178,21 +122,21 @@
 </main>
 
 <footer>
-  <div class="ft-logo"><div class="ico">🫓</div><span>Ха-Хачапури</span></div>
+  <div class="ft-logo">
+    <div class="ico">🫓</div>
+    <span>Ха-Хачапури</span>
+  </div>
   <div class="ft-links">
     <a href="about.html">О нас</a>
     <a href="news.html">Акции и новости</a>
     <a href="contact.html">Обратная связь</a>
   </div>
   <div class="ft-social">
-    <a href="#"><svg class="icon-vk" viewBox="0 0 24 24"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.08 13.45h-1.63c-.62 0-.81-.49-1.92-1.6-1-.94-1.42-.94-1.67-.94-.34 0-.43.09-.43.57v1.46c0 .4-.13.64-1.2.64-1.77 0-3.73-1.07-5.11-3.07C4.38 10.22 4 8.4 4 8.07c0-.25.09-.49.57-.49h1.62c.43 0 .59.19.75.65.83 2.39 2.22 4.49 2.79 4.49.21 0 .31-.1.31-.64V9.88c-.07-1.15-.67-1.25-.67-1.66 0-.2.16-.4.43-.4h2.56c.36 0 .49.19.49.62v3.35c0 .36.16.49.27.49.21 0 .4-.13.8-.53 1.24-1.39 2.12-3.53 2.12-3.53.12-.25.31-.48.74-.48h1.63c.49 0 .6.25.49.59-.21 1-.24.95-.68 1.76l-.9 1.47c-.18.3-.25.43 0 .77.18.25.77.77 1.16 1.24.72.83 1.27 1.53 1.42 2.01.15.46-.08.7-.57.7z"/></svg></a>
-    <a href="#"><svg class="icon-tg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+    <a href="#" aria-label="ВКонтакте"><img src="images/icons/vk.svg" alt=""></a>
+    <a href="#" aria-label="Telegram"><img src="images/icons/telegram.svg" alt=""></a>
   </div>
 </footer>
 
-<style>
-/* fix card inner titles (avoid conflict with .ct contact class) */
-.card .ct2{font-family:var(--font-h);font-size:.92rem;font-weight:600;margin-bottom:4px}
-</style>
+<script src="js/reviews.js"></script>
 </body>
 </html>

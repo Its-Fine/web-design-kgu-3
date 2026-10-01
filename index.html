@@ -4,99 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Ха-Хачапури — Главная</title>
-<link rel="stylesheet" href="style.css">
-<style>
-/* ══ BANNER SLIDER ══ */
-.slider{
-  display:flex;overflow-x:auto;scrollbar-width:none;
-  background:rgba(0,0,0,.08);
-}
-.slider::-webkit-scrollbar{display:none}
-.slide{
-  flex:0 0 calc(100%/4.6);
-  aspect-ratio:9/14;
-  background:var(--ph);
-  position:relative;border-right:3px solid rgba(0,0,0,.08);
-  overflow:hidden;
-}
-/* each slide X */
-.slide::before,.slide::after{
-  content:'';position:absolute;
-  width:34%;height:2px;background:#B0B0B0;
-  top:50%;left:50%;transform-origin:center;
-}
-.slide::before{transform:translate(-50%,-50%) rotate(45deg)}
-.slide::after {transform:translate(-50%,-50%) rotate(-45deg)}
-
-/* ══ MAIN CONTENT ══ */
-.wrap{padding:28px 40px 52px;display:flex;gap:24px;align-items:flex-start}
-
-/* ── Sidebar ── */
-.sidebar{flex:0 0 130px;display:flex;flex-direction:column;gap:2px}
-.sidebar a{
-  font-family:var(--font-h);font-size:.88rem;
-  color:#F0E6D3;padding:9px 14px;border-radius:22px;
-  transition:background .18s;display:block;
-}
-.sidebar a:hover,.sidebar a.act{background:var(--teal);color:#fff}
-.sidebar .sep{color:rgba(240,230,211,.5);padding:6px 14px;font-size:.85rem}
-
-/* ── Dishes area ── */
-.dishes{flex:1;min-width:0}
-.cat-lbl{
-  display:inline-block;
-  background:var(--teal);color:#fff;
-  font-family:var(--font-h);font-size:.78rem;font-weight:600;
-  letter-spacing:.07em;text-transform:uppercase;
-  padding:5px 18px;border-radius:20px;margin-bottom:14px;
-}
-.grid4{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:14px;margin-bottom:32px;
-}
-/* dish card */
-.dc{
-  background:var(--card);border-radius:14px;
-  overflow:hidden;box-shadow:var(--sh);
-  cursor:pointer;transition:transform .2s;
-}
-.dc:hover{transform:translateY(-3px)}
-.dc .di{
-  width:100%;aspect-ratio:1;
-  background:var(--ph);position:relative;overflow:hidden;
-}
-.dc .di::before,.dc .di::after{
-  content:'';position:absolute;
-  width:34%;height:2px;background:#B0B0B0;
-  top:50%;left:50%;transform-origin:center;
-}
-.dc .di::before{transform:translate(-50%,-50%) rotate(45deg)}
-.dc .di::after {transform:translate(-50%,-50%) rotate(-45deg)}
-.badge-new{
-  position:absolute;top:8px;right:8px;z-index:1;
-  background:var(--teal);color:#fff;
-  font-family:var(--font-h);font-size:.6rem;font-weight:700;
-  padding:2px 7px;border-radius:4px;
-}
-.badge-mo{
-  position:absolute;top:8px;right:8px;z-index:1;
-  background:var(--red);color:#fff;
-  font-family:var(--font-h);font-size:.58rem;
-  padding:2px 5px;border-radius:4px;text-align:center;line-height:1.3;
-}
-.dc .db{padding:9px 11px 13px}
-.dc .dn{font-family:var(--font-h);font-size:.8rem;font-weight:600;margin-bottom:4px;line-height:1.3}
-.dc .dd{
-  font-size:.7rem;color:var(--txt-lt);line-height:1.4;margin-bottom:7px;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
-}
-.dc .dp{font-family:var(--font-h);font-size:.82rem;font-weight:700;color:var(--red)}
-</style>
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/pages/index.css">
 </head>
 <body>
 
 <header class="nav">
-  <a href="index.html" class="nav-logo"><div class="ico">🫓</div><span>Ха-Хачапури</span></a>
+  <a href="index.html" class="nav-logo">
+    <div class="ico">🫓</div>
+    <span>Ха-Хачапури</span>
+  </a>
   <nav class="nav-links">
     <a href="about.html">О нас</a>
     <a href="news.html">Акции и новости</a>
@@ -109,11 +28,11 @@
 <main>
   <!-- BANNER -->
   <div class="slider">
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
-    <div class="slide"></div>
+    <div class="slide ph"></div>
+    <div class="slide ph"></div>
+    <div class="slide ph"></div>
+    <div class="slide ph"></div>
+    <div class="slide ph"></div>
   </div>
 
   <!-- MENU -->
@@ -137,7 +56,7 @@
         <div class="grid4">
 
           <div class="dc">
-            <div class="di"></div>
+            <div class="di ph"></div>
             <div class="db">
               <div class="dn">Овощной салат по-тбилисски</div>
               <div class="dd">Салат со свежими овощами, крымским луком, листом салата и ореховой заправкой.</div>
@@ -146,7 +65,7 @@
           </div>
 
           <div class="dc">
-            <div class="di"></div>
+            <div class="di ph"></div>
             <div class="db">
               <div class="dn">Бадриджани</div>
               <div class="dd">Рулеты из жареных баклажанов с ореховой начинкой, с добавлением граната и грецкого ореха.</div>
@@ -155,7 +74,7 @@
           </div>
 
           <div class="dc">
-            <div class="di"><span class="badge-new">НОВИНКА</span></div>
+            <div class="di ph"><span class="badge-new">НОВИНКА</span></div>
             <div class="db">
               <div class="dn">Винегрет с ореховой заправкой</div>
               <div class="dd">Салат из отварных овощей и капусты по-грузийски с ореховой заправкой.</div>
@@ -164,7 +83,7 @@
           </div>
 
           <div class="dc">
-            <div class="di"><span class="badge-new">НОВИНКА</span></div>
+            <div class="di ph"><span class="badge-new">НОВИНКА</span></div>
             <div class="db">
               <div class="dn">Запечённый картофель с капустой</div>
               <div class="dd">Салат из запечённого картофеля в специях, квашеной капусты с добавлением ароматного масла и...</div>
@@ -173,7 +92,7 @@
           </div>
 
           <div class="dc">
-            <div class="di"></div>
+            <div class="di ph"></div>
             <div class="db">
               <div class="dn">Хлеб пури</div>
               <div class="dd">Хлеб из дрожжевого теста собственного приготовления.</div>
@@ -182,7 +101,7 @@
           </div>
 
           <div class="dc">
-            <div class="di"><span class="badge-new">НОВИНКА</span></div>
+            <div class="di ph"><span class="badge-new">НОВИНКА</span></div>
             <div class="db">
               <div class="dn">Пирог с картофелем и грибами</div>
               <div class="dd">Пирог с начинкой из отварного картофеля, обжаренных грибов и ароматной зелени. Нарезается на 4 части.</div>
@@ -191,7 +110,7 @@
           </div>
 
           <div class="dc">
-            <div class="di"><span class="badge-new">НОВИНКА</span></div>
+            <div class="di ph"><span class="badge-new">НОВИНКА</span></div>
             <div class="db">
               <div class="dn">Стейк из капусты с ореховым соусом</div>
               <div class="dd">Ломтик белокочанной капусты, запечённый в горчичном соусе.</div>
@@ -200,7 +119,7 @@
           </div>
 
           <div class="dc">
-            <div class="di"></div>
+            <div class="di ph"></div>
             <div class="db">
               <div class="dn">Грибная юшка</div>
               <div class="dd">Насыщенный суп на основе двух видов грибов с морковью и зеленью.</div>
@@ -217,7 +136,7 @@
         <div class="grid4">
 
           <div class="dc">
-            <div class="di"><span class="badge-new">НОВИНКА</span></div>
+            <div class="di ph"><span class="badge-new">НОВИНКА</span></div>
             <div class="db">
               <div class="dn">Винегрет с ореховой заправкой</div>
               <div class="dd">Салат из отварных овощей и капусты по-грузийски с ореховой заправкой.</div>
@@ -226,7 +145,7 @@
           </div>
 
           <div class="dc">
-            <div class="di"><span class="badge-new">НОВИНКА</span></div>
+            <div class="di ph"><span class="badge-new">НОВИНКА</span></div>
             <div class="db">
               <div class="dn">Морковный пирог</div>
               <div class="dd">Сладкий пирог с морковью, изюмом, грецким орехом, цедрой лимона и ароматными специями.</div>
@@ -235,7 +154,7 @@
           </div>
 
           <div class="dc">
-            <div class="di">
+            <div class="di ph">
               <span class="badge-mo">ХИНКАЛИ<br>МЕСЯЦА</span>
             </div>
             <div class="db">
@@ -246,7 +165,7 @@
           </div>
 
           <div class="dc">
-            <div class="di"><span class="badge-new">НОВИНКА</span></div>
+            <div class="di ph"><span class="badge-new">НОВИНКА</span></div>
             <div class="db">
               <div class="dn">Пирог с картофелем и грибами</div>
               <div class="dd">Пирог с начинкой из отварного картофеля, обжаренных грибов и ароматной зелени. Нарезается на 4 части.</div>
@@ -262,15 +181,18 @@
 </main>
 
 <footer>
-  <div class="ft-logo"><div class="ico">🫓</div><span>Ха-Хачапури</span></div>
+  <div class="ft-logo">
+    <div class="ico">🫓</div>
+    <span>Ха-Хачапури</span>
+  </div>
   <div class="ft-links">
     <a href="about.html">О нас</a>
     <a href="news.html">Акции и новости</a>
     <a href="contact.html">Обратная связь</a>
   </div>
   <div class="ft-social">
-    <a href="#"><svg class="icon-vk" viewBox="0 0 24 24"><path d="M15.07 2H8.93C3.33 2 2 3.33 2 8.93v6.14C2 20.67 3.33 22 8.93 22h6.14C20.67 22 22 20.67 22 15.07V8.93C22 3.33 20.67 2 15.07 2zm3.08 13.45h-1.63c-.62 0-.81-.49-1.92-1.6-1-.94-1.42-.94-1.67-.94-.34 0-.43.09-.43.57v1.46c0 .4-.13.64-1.2.64-1.77 0-3.73-1.07-5.11-3.07C4.38 10.22 4 8.4 4 8.07c0-.25.09-.49.57-.49h1.62c.43 0 .59.19.75.65.83 2.39 2.22 4.49 2.79 4.49.21 0 .31-.1.31-.64V9.88c-.07-1.15-.67-1.25-.67-1.66 0-.2.16-.4.43-.4h2.56c.36 0 .49.19.49.62v3.35c0 .36.16.49.27.49.21 0 .4-.13.8-.53 1.24-1.39 2.12-3.53 2.12-3.53.12-.25.31-.48.74-.48h1.63c.49 0 .6.25.49.59-.21 1-.24.95-.68 1.76l-.9 1.47c-.18.3-.25.43 0 .77.18.25.77.77 1.16 1.24.72.83 1.27 1.53 1.42 2.01.15.46-.08.7-.57.7z"/></svg></a>
-    <a href="#"><svg class="icon-tg" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></a>
+    <a href="#" aria-label="ВКонтакте"><img src="images/icons/vk.svg" alt=""></a>
+    <a href="#" aria-label="Telegram"><img src="images/icons/telegram.svg" alt=""></a>
   </div>
 </footer>
 </body>

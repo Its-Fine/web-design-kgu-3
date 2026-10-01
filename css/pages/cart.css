@@ -1,0 +1,270 @@
+/* Корзина */
+
+.wrap {
+  padding: 28px 40px 52px;
+}
+
+/* левая панель + карта справа */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── Левая панель ── */
+.panel {
+  background: var(--teal);
+  border-radius: var(--r);
+  padding: 28px 22px 24px;
+}
+
+.panel-title {
+  font-family: var(--font-sc);
+  font-size: 1.8rem;
+  color: var(--card);
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* номер заказа */
+.order-box {
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.order-badge {
+  display: inline-block;
+  border: 2px solid var(--card);
+  border-radius: 26px;
+  padding: 7px 30px;
+  font-family: var(--font-h);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--card);
+}
+
+.order-id {
+  text-align: center;
+  font-size: 0.74rem;
+  color: rgba(240, 230, 211, 0.7);
+  margin-bottom: 16px;
+}
+
+/* таблица товаров */
+.ctable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+
+.ctable thead th {
+  font-family: var(--font-h);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--card);
+  text-align: left;
+  padding: 5px 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ctable tbody td {
+  padding: 7px 6px;
+  font-size: 0.85rem;
+  color: var(--card);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ctable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ql {
+  color: var(--card);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.76rem;
+  white-space: nowrap;
+}
+
+/* итоги */
+.totals {
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  padding-top: 10px;
+  margin-bottom: 18px;
+}
+
+.trow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.trow span {
+  font-size: 0.85rem;
+  color: var(--card);
+}
+
+.trow.promo .tv {
+  color: #FFD040;
+  font-weight: 600;
+}
+
+.trow.final {
+  border-top: 1px solid rgba(255, 255, 255, 0.28);
+  padding-top: 8px;
+  margin-top: 3px;
+}
+
+.trow.final span {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+/* заголовок раздела */
+.slbl {
+  font-family: var(--font-h);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--card);
+  margin-bottom: 10px;
+}
+
+/* оплата */
+.pay-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.pay-opt {
+  flex: 1;
+  background: var(--card);
+  border: 2.5px solid transparent;
+  border-radius: 11px;
+  padding: 11px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: border-color 0.18s;
+  font-family: var(--font-h);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--txt);
+}
+
+.pay-opt:hover,
+.pay-opt.sel {
+  border-color: var(--teal-dk);
+}
+
+/* получение */
+.del-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.del-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid transparent;
+  border-radius: 10px;
+  padding: 11px 18px;
+  font-family: var(--font-h);
+  font-size: 0.88rem;
+  color: var(--card);
+  cursor: pointer;
+  text-align: center;
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.del-btn:hover,
+.del-btn.sel {
+  background: rgba(255, 255, 255, 0.32);
+  border-color: var(--card);
+}
+
+.del-hint {
+  font-size: 0.72rem;
+  color: rgba(240, 230, 211, 0.6);
+  margin-bottom: 20px;
+}
+
+/* кнопки действий */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-trash,
+.btn-order {
+  background: var(--red);
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.btn-trash:hover,
+.btn-order:hover {
+  background: var(--red-dk);
+}
+
+.btn-trash {
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-order {
+  flex: 1;
+  padding: 13px 20px;
+  font-family: var(--font-h);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* ── Карта ── */
+.map-box {
+  border-radius: var(--r);
+  overflow: hidden;
+  position: relative;
+  min-height: 530px;
+  background: #D4DFDA;
+  box-shadow: var(--sh);
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 530px;
+  border: none;
+  display: block;
+}
+
+.btn-sel {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(20, 20, 20, 0.84);
+  color: #fff;
+  font-family: var(--font-h);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: background 0.18s;
+}
+
+.btn-sel:hover {
+  background: rgba(0, 0, 0, 0.96);
+}

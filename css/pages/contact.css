@@ -1,0 +1,55 @@
+/* Обратная связь */
+
+.wrap {
+  padding: 36px 36px 56px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 22px;
+  align-items: start;
+}
+
+.form-box h2 {
+  font-family: var(--font-h);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.form-box .lead {
+  font-size: 0.85rem;
+  color: var(--txt-lt);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* подсветка валидности */
+.field input:invalid:not(:placeholder-shown),
+.field textarea:invalid:not(:placeholder-shown) {
+  border-color: var(--red);
+}
+
+.field input:valid:not(:placeholder-shown),
+.field textarea:valid:not(:placeholder-shown) {
+  border-color: var(--teal);
+}
+
+.req {
+  color: var(--red);
+}
+
+.btn-submit:focus-visible,
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: 3px solid var(--teal);
+  outline-offset: 2px;
+}
+
+@media (max-width: 760px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .wrap { padding: 24px 16px 40px; }
+}
