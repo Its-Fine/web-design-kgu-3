@@ -1,0 +1,402 @@
+// Главная страница (index.html) — Лабораторная по Sass/SCSS
+// Компиляция: sass scss/index.scss css/pages/index.css
+
+// ─────────────── CSS-переменные (сложные значения) ───────────────
+:root {
+  // градиенты
+  --grad-teal: linear-gradient(135deg, #5BA595 0%, #3A6E62 100%);
+  --grad-red: linear-gradient(135deg, #C95A4A 0%, #8B3820 100%);
+  --grad-slide: linear-gradient(180deg, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.18) 100%);
+
+  // тени и рамки
+  --shadow-card-hover: 0 10px 26px rgba(0, 0, 0, 0.28);
+  --border-slide: 3px solid rgba(0, 0, 0, 0.08);
+
+  // переходы и анимации
+  --trans-fast: 0.18s ease;
+  --trans-card: transform 0.25s ease, box-shadow 0.25s ease;
+  --anim-fade-up: fade-up 0.6s ease both;
+  --anim-pulse: pulse 2s ease-in-out infinite;
+}
+
+// ─────────────── Миксины (с кроссбраузерными префиксами) ───────────────
+@mixin prefix($property, $value) {
+  -webkit-#{$property}: $value;
+  -moz-#{$property}: $value;
+  #{$property}: $value;
+}
+
+@mixin transition($value...) {
+  -webkit-transition: $value;
+  -moz-transition: $value;
+  -o-transition: $value;
+  transition: $value;
+}
+
+@mixin transform($value) {
+  -webkit-transform: $value;
+  -ms-transform: $value;
+  transform: $value;
+}
+
+@mixin animation($value) {
+  -webkit-animation: $value;
+  animation: $value;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin shadow($value) {
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
+
+@mixin line-clamp($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@mixin up-to($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+// ─────────────── Шаблонные селекторы ───────────────
+%pill {
+  display: inline-block;
+  color: #fff;
+  font-family: var(--font-h);
+  border-radius: 20px;
+}
+
+%badge-corner {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 1;
+  color: #fff;
+  font-family: var(--font-h);
+  border-radius: 4px;
+}
+
+// ─────────────── Анимации (@keyframes) ───────────────
+@include keyframes(fade-up) {
+  from {
+    opacity: 0;
+    @include transform(translateY(18px));
+  }
+  to {
+    opacity: 1;
+    @include transform(translateY(0));
+  }
+}
+
+@include keyframes(pulse) {
+  0%,
+  100% {
+    @include transform(scale(1));
+  }
+  50% {
+    @include transform(scale(1.12));
+  }
+}
+
+// ─────────────── Баннер-слайдер ───────────────
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background: rgba(0, 0, 0, 0.08);
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .slide {
+    flex: 0 0 calc(100% / 4.6);
+    aspect-ratio: 9/14;
+    border-right: var(--border-slide);
+
+    // градиентное затемнение низа слайда поверх серой заглушки
+    background: var(--grad-slide), var(--ph);
+  }
+}
+
+// ─────────────── Основной блок ───────────────
+.wrap {
+  padding: 28px 40px 52px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+// ─────────────── Боковое меню ───────────────
+.sidebar {
+  flex: 0 0 130px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  a {
+    display: block;
+    font-family: var(--font-h);
+    font-size: 0.88rem;
+    color: #f0e6d3;
+    padding: 9px 14px;
+    border-radius: 22px;
+    @include transition(background var(--trans-fast), color var(--trans-fast));
+
+    &:hover,
+    &.act {
+      background: var(--grad-teal);
+      color: #fff;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+  }
+
+  .sep {
+    color: rgba(240, 230, 211, 0.5);
+    padding: 6px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+// ─────────────── Блюда ───────────────
+.dishes {
+  flex: 1;
+  min-width: 0;
+}
+
+.cat-lbl {
+  @extend %pill;
+  background: var(--grad-teal);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  margin-bottom: 14px;
+}
+
+.grid4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+// карточка блюда
+.dc {
+  background: var(--card);
+  border-radius: 14px;
+  overflow: hidden;
+  @include shadow(var(--sh));
+  cursor: pointer;
+  @include transition(var(--trans-card));
+  @include animation(var(--anim-fade-up));
+
+  // каскадное появление карточек
+  @for $i from 1 through 8 {
+    &:nth-child(#{$i}) {
+      -webkit-animation-delay: #{$i * 0.06}s;
+      animation-delay: #{$i * 0.06}s;
+    }
+  }
+
+  &:hover {
+    @include transform(translateY(-4px) scale(1.02));
+    @include shadow(var(--shadow-card-hover));
+  }
+
+  .di {
+    width: 100%;
+    aspect-ratio: 1;
+  }
+
+  .db {
+    padding: 9px 11px 13px;
+  }
+
+  .dn {
+    font-family: var(--font-h);
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+
+  .dd {
+    font-size: 0.7rem;
+    color: var(--txt-lt);
+    line-height: 1.4;
+    margin-bottom: 7px;
+    @include line-clamp(3);
+  }
+
+  .dp {
+    font-family: var(--font-h);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--red);
+  }
+}
+
+// значки на фото
+.badge-new {
+  @extend %badge-corner;
+  background: var(--grad-teal);
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  @include animation(var(--anim-pulse));
+}
+
+.badge-mo {
+  @extend %badge-corner;
+  background: var(--grad-red);
+  font-size: 0.58rem;
+  padding: 2px 5px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+// ─────────────── Гамбургер-меню (только на мобильных) ───────────────
+.nav-toggle {
+  display: none;
+}
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 40px;
+  margin-left: 14px;
+  padding: 9px 8px;
+  border-radius: 10px;
+  background: var(--grad-teal);
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-between;
+
+  span {
+    display: block;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    @include transition(transform 0.25s ease, opacity 0.2s ease);
+  }
+}
+
+// ─────────────── Адаптив ───────────────
+// планшет
+@include up-to(992px) {
+  .wrap {
+    padding: 22px 24px 40px;
+  }
+
+  .grid4 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// мобильные: меню → гамбургер, боковое меню → горизонтальная лента
+@include up-to(720px) {
+  .nav {
+    padding: 10px 16px;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .nav-cart {
+    margin-left: 12px;
+    padding: 8px 16px;
+  }
+
+  .lang {
+    display: none;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--nav-bg);
+    max-height: 0;
+    overflow: hidden;
+    @include transition(max-height 0.3s ease);
+
+    a {
+      padding: 14px 20px;
+      border-top: 1px solid rgba(0, 0, 0, 0.07);
+    }
+  }
+
+  // чекбокс-«переключатель» открывает меню без JavaScript
+  .nav-toggle:checked {
+    ~ .nav-links {
+      max-height: 240px;
+    }
+
+    ~ .burger span {
+      &:nth-child(1) {
+        @include transform(translateY(9px) rotate(45deg));
+      }
+
+      &:nth-child(2) {
+        opacity: 0;
+      }
+
+      &:nth-child(3) {
+        @include transform(translateY(-9px) rotate(-45deg));
+      }
+    }
+  }
+
+  .slide {
+    flex-basis: 45%;
+  }
+
+  .wrap {
+    flex-direction: column;
+    padding: 18px 14px 36px;
+    gap: 14px;
+  }
+
+  .sidebar {
+    flex: none;
+    flex-direction: row;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .grid4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
+
+@include up-to(420px) {
+  .grid4 {
+    grid-template-columns: 1fr;
+  }
+}
