@@ -1,16 +1,16 @@
 /* Обратная связь */
 
 .wrap {
-  padding: 36px 36px 56px;
-  max-width: 1000px;
   margin: 0 auto;
+  max-width: 1000px;
+  padding: 36px 36px 56px;
 }
 
 .contact-layout {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 22px;
   align-items: start;
+  display: grid;
+  gap: 22px;
+  grid-template-columns: 1.3fr 1fr;
 }
 
 .form-box h2 {
@@ -21,10 +21,10 @@
 }
 
 .form-box .lead {
-  font-size: 0.85rem;
   color: var(--txt-lt);
-  margin-bottom: 20px;
+  font-size: .85rem;
   line-height: 1.5;
+  margin-bottom: 20px;
 }
 
 /* подсветка валидности */
@@ -38,7 +38,7 @@
   border-color: var(--teal);
 }
 
-.req {
+.required-mark {
   color: var(--red);
 }
 
@@ -50,6 +50,11 @@
 }
 
 @media (max-width: 760px) {
-  .contact-layout { grid-template-columns: 1fr; }
-  .wrap { padding: 24px 16px 40px; }
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .wrap {
+    padding: 24px 16px 40px;
+  }
 }

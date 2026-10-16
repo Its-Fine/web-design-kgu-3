@@ -2,48 +2,53 @@
 
 /* ── Бейдж (бирюзовая «таблетка» с заголовком секции) ── */
 .badge {
-  display: inline-block;
   background: var(--teal);
-  color: #fff;
-  font-family: var(--font-h);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  padding: 5px 18px;
   border-radius: 20px;
+  color: #fff;
+  display: inline-block;
+  font-family: var(--font-h);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .07em;
   margin-bottom: 18px;
+  padding: 5px 18px;
+  text-transform: uppercase;
 }
 
 /* ── Серая заглушка с крестом вместо картинки ──
    Ширину линий креста можно менять через --x-w */
-.ph {
+.placeholder {
   --x-w: 34%;
   position: relative;
   overflow: hidden;
   background: var(--ph);
 }
 
-.ph::before,
-.ph::after {
+.placeholder::before,
+.placeholder::after {
+  background: #b0b0b0;
   content: '';
+  height: 2px;
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
-  width: var(--x-w);
-  height: 2px;
-  background: #B0B0B0;
   transform-origin: center;
+  width: var(--x-w);
 }
 
-.ph::before { transform: translate(-50%, -50%) rotate(45deg); }
-.ph::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+.placeholder::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.placeholder::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 
 /* ── Сетка в две колонки ── */
-.grid2 {
+.grid-two {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 22px;
+  grid-template-columns: 1fr 1fr;
   margin-bottom: 36px;
 }
 
@@ -51,87 +56,98 @@
 .card {
   background: var(--card);
   border-radius: var(--r);
-  overflow: hidden;
   box-shadow: var(--sh);
-  transition: transform 0.2s;
+  overflow: hidden;
+  transition: transform .2s;
 }
 
 .card:hover {
   transform: translateY(-3px);
 }
 
-.card .ci { width: 100%; aspect-ratio: 4/3; }
-.card .cb { padding: 14px 16px 18px; }
+.card .card-image {
+  aspect-ratio: 4/3;
+  width: 100%;
+}
 
-.card .ct {
+.card .card-body {
+  padding: 14px 16px 18px;
+}
+
+.card .card-title {
   font-family: var(--font-h);
-  font-size: 0.92rem;
+  font-size: .92rem;
   font-weight: 600;
   margin-bottom: 4px;
 }
 
-.card .cd {
-  font-size: 0.8rem;
+.card .card-description {
   color: var(--txt-lt);
+  font-size: .8rem;
   line-height: 1.5;
 }
 
 /* ── Информационная врезка (aside) ── */
 aside.info-aside {
   background: var(--teal);
-  color: var(--card);
   border-radius: var(--r);
-  padding: 20px 24px;
-  margin-bottom: 30px;
   box-shadow: var(--sh);
+  color: var(--card);
+  margin-bottom: 30px;
+  padding: 20px 24px;
 }
 
-aside.info-aside strong { font-family: var(--font-h); }
-aside.info-aside small  { color: rgba(240, 230, 211, 0.75); }
+aside.info-aside strong {
+  font-family: var(--font-h);
+}
+
+aside.info-aside small {
+  color: rgba(240, 230, 211, .75);
+}
 
 /* ── Форма ── */
 .form-box {
   background: var(--card);
   border-radius: var(--r);
-  padding: 26px 28px;
   box-shadow: var(--sh);
+  padding: 26px 28px;
 }
 
 .field {
-  margin-bottom: 18px;
   display: flex;
   flex-direction: column;
   gap: 6px;
+  margin-bottom: 18px;
 }
 
 .field label {
-  font-family: var(--font-h);
-  font-size: 0.86rem;
-  font-weight: 600;
   color: var(--txt);
+  font-family: var(--font-h);
+  font-size: .86rem;
+  font-weight: 600;
 }
 
 .field input,
 .field textarea {
-  font-family: var(--font-b);
-  font-size: 0.95rem;
-  color: var(--txt);
   background: #fff;
-  border: 1.5px solid rgba(0, 0, 0, 0.14);
+  border: 1.5px solid rgba(0, 0, 0, .14);
   border-radius: 10px;
+  color: var(--txt);
+  font-family: var(--font-b);
+  font-size: .95rem;
   padding: 11px 14px;
-  transition: border-color 0.18s;
+  transition: border-color .18s;
 }
 
 .field input:focus,
 .field textarea:focus {
-  outline: none;
   border-color: var(--teal);
+  outline: none;
 }
 
 .field textarea {
-  resize: vertical;
   min-height: 120px;
+  resize: vertical;
 }
 
 .field small.hint {
@@ -142,13 +158,13 @@ aside.info-aside small  { color: rgba(240, 230, 211, 0.75); }
   background: var(--red);
   border: none;
   border-radius: 24px;
-  padding: 12px 34px;
   color: #fff;
   cursor: pointer;
   font-family: var(--font-h);
   font-size: 1rem;
   font-weight: 600;
-  transition: background 0.18s;
+  padding: 12px 34px;
+  transition: background .18s;
 }
 
 .btn-submit:hover {
@@ -156,5 +172,7 @@ aside.info-aside small  { color: rgba(240, 230, 211, 0.75); }
 }
 
 @media (max-width: 760px) {
-  .grid2 { grid-template-columns: 1fr; }
+  .grid-two {
+    grid-template-columns: 1fr;
+  }
 }

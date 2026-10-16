@@ -6,10 +6,10 @@
 
 /* левая панель + карта справа */
 .layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
   align-items: start;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr 1fr;
 }
 
 /* ── Левая панель ── */
@@ -20,178 +20,180 @@
 }
 
 .panel-title {
+  color: var(--card);
   font-family: var(--font-sc);
   font-size: 1.8rem;
-  color: var(--card);
-  text-align: center;
   margin-bottom: 18px;
+  text-align: center;
 }
 
 /* номер заказа */
 .order-box {
-  text-align: center;
   margin-bottom: 4px;
+  text-align: center;
 }
 
 .order-badge {
-  display: inline-block;
   border: 2px solid var(--card);
   border-radius: 26px;
-  padding: 7px 30px;
-  font-family: var(--font-h);
-  font-size: 0.95rem;
-  font-weight: 700;
   color: var(--card);
+  display: inline-block;
+  font-family: var(--font-h);
+  font-size: .95rem;
+  font-weight: 700;
+  padding: 7px 30px;
 }
 
 .order-id {
-  text-align: center;
-  font-size: 0.74rem;
-  color: rgba(240, 230, 211, 0.7);
+  color: rgba(240, 230, 211, .7);
+  font-size: .74rem;
   margin-bottom: 16px;
+  text-align: center;
 }
 
 /* таблица товаров */
-.ctable {
-  width: 100%;
+.cart-table {
   border-collapse: collapse;
   margin-bottom: 12px;
+  width: 100%;
 }
 
-.ctable thead th {
+.cart-table thead th {
+  border-bottom: 1px solid rgba(255, 255, 255, .28);
+  color: var(--card);
   font-family: var(--font-h);
-  font-size: 0.75rem;
+  font-size: .75rem;
   font-weight: 600;
-  color: var(--card);
-  text-align: left;
+  letter-spacing: .05em;
   padding: 5px 6px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.28);
+  text-align: left;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
-.ctable tbody td {
-  padding: 7px 6px;
-  font-size: 0.85rem;
+.cart-table tbody td {
+  border-bottom: 1px solid rgba(255, 255, 255, .1);
   color: var(--card);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: .85rem;
+  padding: 7px 6px;
 }
 
-.ctable tbody tr:last-child td {
+.cart-table tbody tr:last-child td {
   border-bottom: none;
 }
 
-.ql {
+.quantity-link {
   color: var(--card);
-  text-decoration: underline;
   cursor: pointer;
-  font-size: 0.76rem;
+  font-size: .76rem;
+  text-decoration: underline;
   white-space: nowrap;
 }
 
 /* итоги */
 .totals {
-  border-top: 1px solid rgba(255, 255, 255, 0.28);
-  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, .28);
   margin-bottom: 18px;
+  padding-top: 10px;
 }
 
-.trow {
+.total-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 5px;
 }
 
-.trow span {
-  font-size: 0.85rem;
+.total-row span {
   color: var(--card);
+  font-size: .85rem;
 }
 
-.trow.promo .tv {
-  color: #FFD040;
+.total-row.promo .total-value {
+  color: #ffd040;
   font-weight: 600;
 }
 
-.trow.final {
-  border-top: 1px solid rgba(255, 255, 255, 0.28);
-  padding-top: 8px;
+.total-row.final {
+  border-top: 1px solid rgba(255, 255, 255, .28);
   margin-top: 3px;
+  padding-top: 8px;
 }
 
-.trow.final span {
-  font-size: 0.92rem;
+.total-row.final span {
+  font-size: .92rem;
   font-weight: 700;
 }
 
 /* заголовок раздела */
-.slbl {
-  font-family: var(--font-h);
-  font-size: 0.88rem;
-  font-weight: 700;
+.section-label {
   color: var(--card);
+  font-family: var(--font-h);
+  font-size: .88rem;
+  font-weight: 700;
   margin-bottom: 10px;
 }
 
 /* оплата */
-.pay-row {
+.payment-row {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
 }
 
-.pay-opt {
-  flex: 1;
+.payment-option {
+  align-items: center;
   background: var(--card);
   border: 2.5px solid transparent;
   border-radius: 11px;
-  padding: 11px 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  cursor: pointer;
-  transition: border-color 0.18s;
-  font-family: var(--font-h);
-  font-size: 0.78rem;
-  font-weight: 600;
   color: var(--txt);
+  cursor: pointer;
+  display: flex;
+  flex: 1;
+  font-family: var(--font-h);
+  font-size: .78rem;
+  font-weight: 600;
+  gap: 6px;
+  justify-content: center;
+  padding: 11px 8px;
+  transition: border-color .18s;
 }
 
-.pay-opt:hover,
-.pay-opt.sel {
+.payment-option:hover,
+.payment-option.is-selected {
   border-color: var(--teal-dk);
 }
 
 /* получение */
-.del-col {
+.delivery-column {
   display: flex;
   flex-direction: column;
   gap: 8px;
   margin-bottom: 6px;
 }
 
-.del-btn {
-  background: rgba(255, 255, 255, 0.2);
+.delivery-button {
+  background: rgba(255, 255, 255, .2);
   border: 2px solid transparent;
   border-radius: 10px;
-  padding: 11px 18px;
-  font-family: var(--font-h);
-  font-size: 0.88rem;
   color: var(--card);
   cursor: pointer;
+  font-family: var(--font-h);
+  font-size: .88rem;
+  padding: 11px 18px;
   text-align: center;
-  transition: background 0.18s, border-color 0.18s;
+  transition:
+    background .18s,
+    border-color .18s;
 }
 
-.del-btn:hover,
-.del-btn.sel {
-  background: rgba(255, 255, 255, 0.32);
+.delivery-button:hover,
+.delivery-button.is-selected {
+  background: rgba(255, 255, 255, .32);
   border-color: var(--card);
 }
 
-.del-hint {
-  font-size: 0.72rem;
-  color: rgba(240, 230, 211, 0.6);
+.delivery-hint {
+  color: rgba(240, 230, 211, .6);
+  font-size: .72rem;
   margin-bottom: 20px;
 }
 
@@ -208,7 +210,7 @@
   border-radius: 12px;
   color: #fff;
   cursor: pointer;
-  transition: background 0.18s;
+  transition: background .18s;
 }
 
 .btn-trash:hover,
@@ -217,54 +219,54 @@
 }
 
 .btn-trash {
-  padding: 13px 16px;
-  display: flex;
   align-items: center;
+  display: flex;
+  padding: 13px 16px;
 }
 
 .btn-order {
   flex: 1;
-  padding: 13px 20px;
   font-family: var(--font-h);
   font-size: 1.05rem;
   font-weight: 600;
+  padding: 13px 20px;
 }
 
 /* ── Карта ── */
 .map-box {
+  background: #d4dfda;
   border-radius: var(--r);
+  box-shadow: var(--sh);
+  min-height: 530px;
   overflow: hidden;
   position: relative;
-  min-height: 530px;
-  background: #D4DFDA;
-  box-shadow: var(--sh);
 }
 
 .map-box iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 530px;
   border: none;
   display: block;
+  height: 100%;
+  min-height: 530px;
+  width: 100%;
 }
 
 .btn-sel {
-  position: absolute;
+  backdrop-filter: blur(6px);
+  background: rgba(20, 20, 20, .84);
+  border: none;
+  border-radius: 12px;
   bottom: 20px;
-  right: 20px;
-  background: rgba(20, 20, 20, 0.84);
   color: #fff;
+  cursor: pointer;
   font-family: var(--font-h);
-  font-size: 0.95rem;
+  font-size: .95rem;
   font-weight: 600;
   padding: 13px 26px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  backdrop-filter: blur(6px);
-  transition: background 0.18s;
+  position: absolute;
+  right: 20px;
+  transition: background .18s;
 }
 
 .btn-sel:hover {
-  background: rgba(0, 0, 0, 0.96);
+  background: rgba(0, 0, 0, .96);
 }

@@ -2,39 +2,39 @@
 
 /* ── Шапка ── */
 .nav {
-  background: var(--nav-bg);
-  padding: 10px 40px;
-  display: flex;
   align-items: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+  background: var(--nav-bg);
+  border-bottom: 1px solid rgba(0, 0, 0, .07);
+  display: flex;
+  padding: 10px 40px;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 .nav-logo {
-  display: flex;
   align-items: center;
+  display: flex;
   gap: 10px;
   margin-right: auto;
 }
 
-.nav-logo .ico {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: #E8C98A;
-  display: flex;
+.nav-logo .logo-icon {
   align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
+  background: #e8c98a;
+  border-radius: 50%;
+  display: flex;
   flex-shrink: 0;
+  font-size: 1.5rem;
+  height: 52px;
+  justify-content: center;
+  width: 52px;
 }
 
-.nav-logo span {
+.nav-logo .logo-text {
+  color: var(--txt);
   font-family: var(--font-sc);
   font-size: 1.6rem;
-  color: var(--txt);
 }
 
 .nav-links {
@@ -43,28 +43,28 @@
 }
 
 .nav-links a {
+  color: var(--txt);
   font-family: var(--font-h);
   font-size: 1rem;
-  color: var(--txt);
-  transition: color 0.2s;
+  transition: color .2s;
 }
 
 .nav-links a:hover,
-.nav-links a.act {
+.nav-links a.is-active {
   color: var(--red);
 }
 
 .nav-cart {
-  display: inline-block;
   background: var(--teal);
-  color: #fff;
-  font-family: var(--font-h);
-  font-weight: 500;
-  font-size: 0.95rem;
-  padding: 8px 26px;
   border-radius: 24px;
+  color: #fff;
+  display: inline-block;
+  font-family: var(--font-h);
+  font-size: .95rem;
+  font-weight: 500;
   margin-left: 28px;
-  transition: background 0.2s;
+  padding: 8px 26px;
+  transition: background .2s;
 }
 
 .nav-cart:hover {
@@ -77,90 +77,97 @@
 }
 
 .lang span {
-  font-family: var(--font-h);
-  font-weight: 700;
-  font-size: 0.92rem;
-  padding: 6px 11px;
   border-radius: 6px;
   cursor: pointer;
+  font-family: var(--font-h);
+  font-size: .92rem;
+  font-weight: 700;
   line-height: 1;
+  padding: 6px 11px;
 }
 
-.lang .on  { background: var(--red-dk); color: #fff; }
-.lang .off { background: #ABABAB;       color: #fff; }
+.lang .on {
+  background: var(--red-dk);
+  color: #fff;
+}
+
+.lang .off {
+  background: #ababab;
+  color: #fff;
+}
 
 /* ── Подвал ── */
 footer {
-  background: var(--nav-bg);
-  border-top: 1px solid rgba(0, 0, 0, 0.07);
-  padding: 26px 40px;
-  display: flex;
   align-items: center;
+  background: var(--nav-bg);
+  border-top: 1px solid rgba(0, 0, 0, .07);
+  display: flex;
   gap: 60px;
+  padding: 26px 40px;
 }
 
-.ft-logo {
-  display: flex;
+.footer-logo {
   align-items: center;
+  display: flex;
   gap: 10px;
 }
 
-.ft-logo .ico {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #E8C98A;
-  display: flex;
+.footer-logo .logo-icon {
   align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
+  background: #e8c98a;
+  border-radius: 50%;
+  display: flex;
   flex-shrink: 0;
+  font-size: 1.6rem;
+  height: 60px;
+  justify-content: center;
+  width: 60px;
 }
 
-.ft-logo span {
+.footer-logo .logo-text {
   font-family: var(--font-sc);
   font-size: 1.4rem;
 }
 
-.ft-links {
+.footer-links {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.ft-links a {
-  font-family: var(--font-h);
-  font-size: 0.92rem;
+.footer-links a {
   color: var(--txt);
-  transition: color 0.2s;
+  font-family: var(--font-h);
+  font-size: .92rem;
+  transition: color .2s;
 }
 
-.ft-links a:hover {
+.footer-links a:hover {
   color: var(--red);
 }
 
-.ft-social {
+.footer-social {
   display: flex;
   gap: 10px;
   margin-left: auto;
 }
 
-.ft-social a {
-  width: 38px;
-  height: 38px;
-  border-radius: 8px;
-  background: var(--txt);
-  display: flex;
+.footer-social a {
   align-items: center;
+  background: var(--txt);
+  border-radius: 8px;
+  display: flex;
+  height: 38px;
   justify-content: center;
-  transition: background 0.2s;
+  transition: background .2s;
+  width: 38px;
 }
 
-.ft-social a:hover {
+.footer-social a:hover {
   background: var(--red);
 }
 
-.ft-social img {
-  width: 18px;
+.footer-social img {
   height: 18px;
+  width: 18px;
 }
