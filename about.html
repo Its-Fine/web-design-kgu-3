@@ -1,142 +1,171 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ха-Хачапури — О нас</title>
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/layout.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/pages/about.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ха-Хачапури — О нас</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/about.css">
+  </head>
+  <body>
+    <header class="nav">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🫓</span>
+        <span class="logo-text">Ха-Хачапури</span>
+      </a>
+      <nav class="nav-links">
+        <a href="about.html" class="is-active">О нас</a>
+        <a href="news.html">Акции и новости</a>
+        <a href="contact.html">Обратная связь</a>
+      </nav>
+      <a href="cart.html" class="nav-cart">Корзина</a>
+      <div class="lang"><span class="on">RU</span><span class="off">EN</span></div>
+    </header>
 
-<header class="nav">
-  <a href="index.html" class="nav-logo">
-    <div class="ico">🫓</div>
-    <span>Ха-Хачапури</span>
-  </a>
-  <nav class="nav-links">
-    <a href="about.html" class="act">О нас</a>
-    <a href="news.html">Акции и новости</a>
-    <a href="contact.html">Обратная связь</a>
-  </nav>
-  <a href="cart.html" class="nav-cart">Корзина</a>
-  <div class="lang"><span class="on">RU</span><span class="off">EN</span></div>
-</header>
+    <main>
+      <div class="wrap">
+        <!-- HERO -->
+        <div class="hero placeholder"></div>
 
-<main>
-<div class="wrap">
+        <!-- КОНТАКТЫ -->
+        <section id="contacts" aria-labelledby="contacts-title">
+          <div class="badge" id="contacts-title">Контакты</div>
+          <div class="contacts">
+            <div class="contact-item">Телефон<br><strong>+7 (900) 123-45-67</strong></div>
+            <div class="contact-item">
+              Адрес<br><strong>г. Иваново, ул. Хачапурная, 3</strong>
+            </div>
+            <div class="contact-item">Почта<br><strong>info@ha-hachapuri.ru</strong></div>
+          </div>
+        </section>
 
-  <!-- HERO -->
-  <div class="hero ph"></div>
+        <!-- О НАС -->
+        <section id="o-nas" aria-labelledby="o-nas-title">
+          <div class="badge" id="o-nas-title">О нас</div>
+          <div class="grid-two">
+            <article class="card">
+              <div class="card-image placeholder"></div>
+              <div class="card-body">
+                <div class="card-title">Наша история</div>
+                <div class="card-description">
+                  <em>«Ха-Хачапури»</em> открылся в 2021 году с простой идеей — готовить
+                  <strong>настоящую грузинскую кухню</strong> так, как её готовят дома, в семье.
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-image placeholder"></div>
+              <div class="card-body">
+                <div class="card-title">Наши продукты</div>
+                <div class="card-description">
+                  Используем только <strong>свежие фермерские овощи</strong>, сыр собственного
+                  производства и специи, привезённые <em>напрямую из Грузии</em>.
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-image placeholder"></div>
+              <div class="card-body">
+                <div class="card-title">Наша команда</div>
+                <div class="card-description">
+                  Повара с опытом более <mark>10 лет</mark> в национальной кухне готовят каждое
+                  блюдо вручную, без заморозки и полуфабрикатов.
+                </div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="card-image placeholder"></div>
+              <div class="card-body">
+                <div class="card-title">Доставка</div>
+                <div class="card-description">
+                  Доставляем заказы по городу за <strong>40–60 минут</strong>.
+                  <small>Подробности — на странице «Доставка и оплата».</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
 
-  <!-- КОНТАКТЫ -->
-  <section id="contacts" aria-labelledby="contacts-title">
-    <div class="badge" id="contacts-title">Контакты</div>
-    <div class="contacts">
-      <div class="contact-item">Телефон<br><strong>+7 (900) 123-45-67</strong></div>
-      <div class="contact-item">Адрес<br><strong>г. Иваново, ул. Хачапурная, 3</strong></div>
-      <div class="contact-item">Почта<br><strong>info@ha-hachapuri.ru</strong></div>
-    </div>
-  </section>
+        <!-- ДОПОЛНИТЕЛЬНО: интересный факт -->
+        <aside class="info-aside">
+          <p>
+            <strong>Знаете ли вы?</strong> Хинкали принято есть <em>руками</em>, держа за «хвостик»
+            — его по традиции не едят, он остаётся на тарелке. <mark>Хвостики не едят!</mark>
+          </p>
+          <p><small>Так можно посчитать, сколько хинкали съел гость 😊</small></p>
+        </aside>
 
-  <!-- О НАС -->
-  <section id="o-nas" aria-labelledby="o-nas-title">
-    <div class="badge" id="o-nas-title">О нас</div>
-    <div class="grid2">
-      <article class="card">
-        <div class="ci ph"></div>
-        <div class="cb">
-          <div class="ct">Наша история</div>
-          <div class="cd"><em>«Ха-Хачапури»</em> открылся в 2021 году с простой идеей — готовить
-          <strong>настоящую грузинскую кухню</strong> так, как её готовят дома, в семье.</div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ci ph"></div>
-        <div class="cb">
-          <div class="ct">Наши продукты</div>
-          <div class="cd">Используем только <strong>свежие фермерские овощи</strong>, сыр
-          собственного производства и специи, привезённые <em>напрямую из Грузии</em>.</div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ci ph"></div>
-        <div class="cb">
-          <div class="ct">Наша команда</div>
-          <div class="cd">Повара с опытом более <mark>10 лет</mark> в национальной кухне готовят
-          каждое блюдо вручную, без заморозки и полуфабрикатов.</div>
-        </div>
-      </article>
-      <article class="card">
-        <div class="ci ph"></div>
-        <div class="cb">
-          <div class="ct">Доставка</div>
-          <div class="cd">Доставляем заказы по городу за <strong>40–60 минут</strong>.
-          <small>Подробности — на странице «Доставка и оплата».</small></div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ДОПОЛНИТЕЛЬНО: интересный факт -->
-  <aside class="info-aside">
-    <p><strong>Знаете ли вы?</strong> Хинкали принято есть <em>руками</em>, держа за «хвостик» —
-    его по традиции не едят, он остаётся на тарелке. <mark>Хвостики не едят!</mark></p>
-    <p><small>Так можно посчитать, сколько хинкали съел гость 😊</small></p>
-  </aside>
-
-  <!-- ОТЗЫВЫ -->
-  <section id="reviews" aria-labelledby="reviews-title">
-    <div class="badge" id="reviews-title">Последние отзывы</div>
-    <div class="rev-outer">
-      <button class="arr arr-l" data-scroll="-240" aria-label="Назад">&#8592;</button>
-      <div class="rev-track" id="rt">
-        <article class="rev-card">
-          <div class="rev-head"><div class="rev-av"></div><span class="rev-name">Анна</span></div>
-          <div class="rev-body"><em>«Очень вкусные хинкали, прямо как у бабушки в Грузии!»</em><br>
-          <small>12 сентября 2025</small></div>
-        </article>
-        <article class="rev-card">
-          <div class="rev-head"><div class="rev-av"></div><span class="rev-name">Дмитрий</span></div>
-          <div class="rev-body"><em>«Хачапури по-аджарски — <strong>огонь</strong>, рекомендую всем!»</em><br>
-          <small>5 сентября 2025</small></div>
-        </article>
-        <article class="rev-card">
-          <div class="rev-head"><div class="rev-av"></div><span class="rev-name">Мария</span></div>
-          <div class="rev-body"><em>«Доставка приехала быстро, всё ещё <strong>горячее</strong>».</em><br>
-          <small>28 августа 2025</small></div>
-        </article>
-        <article class="rev-card">
-          <div class="rev-head"><div class="rev-av"></div><span class="rev-name">Игорь</span></div>
-          <div class="rev-body"><em>«Лучшее постное меню в городе!»</em><br>
-          <small>14 августа 2025</small></div>
-        </article>
+        <!-- ОТЗЫВЫ -->
+        <section id="reviews" aria-labelledby="reviews-title">
+          <div class="badge" id="reviews-title">Последние отзывы</div>
+          <div class="review-outer">
+            <button class="arrow arrow-left" data-scroll="-240" aria-label="Назад">&#8592;</button>
+            <div class="review-track" id="reviews-track">
+              <article class="review-card">
+                <div class="review-head">
+                  <div class="review-avatar"></div>
+                  <span class="review-name">Анна</span>
+                </div>
+                <div class="review-body">
+                  <em>«Очень вкусные хинкали, прямо как у бабушки в Грузии!»</em><br>
+                  <small>12 сентября 2025</small>
+                </div>
+              </article>
+              <article class="review-card">
+                <div class="review-head">
+                  <div class="review-avatar"></div>
+                  <span class="review-name">Дмитрий</span>
+                </div>
+                <div class="review-body">
+                  <em>«Хачапури по-аджарски — <strong>огонь</strong>, рекомендую всем!»</em><br>
+                  <small>5 сентября 2025</small>
+                </div>
+              </article>
+              <article class="review-card">
+                <div class="review-head">
+                  <div class="review-avatar"></div>
+                  <span class="review-name">Мария</span>
+                </div>
+                <div class="review-body">
+                  <em>«Доставка приехала быстро, всё ещё <strong>горячее</strong>».</em><br>
+                  <small>28 августа 2025</small>
+                </div>
+              </article>
+              <article class="review-card">
+                <div class="review-head">
+                  <div class="review-avatar"></div>
+                  <span class="review-name">Игорь</span>
+                </div>
+                <div class="review-body">
+                  <em>«Лучшее постное меню в городе!»</em><br>
+                  <small>14 августа 2025</small>
+                </div>
+              </article>
+            </div>
+            <button class="arrow arrow-right" data-scroll="240" aria-label="Вперёд">&#8594;</button>
+          </div>
+        </section>
       </div>
-      <button class="arr arr-r" data-scroll="240" aria-label="Вперёд">&#8594;</button>
-    </div>
-  </section>
+    </main>
 
-</div>
-</main>
+    <footer>
+      <div class="footer-logo">
+        <span class="logo-icon">🫓</span>
+        <span class="logo-text">Ха-Хачапури</span>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">О нас</a>
+        <a href="news.html">Акции и новости</a>
+        <a href="contact.html">Обратная связь</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="ВКонтакте"><img src="images/icons/vk.svg" alt=""></a>
+        <a href="#" aria-label="Telegram"><img src="images/icons/telegram.svg" alt=""></a>
+      </div>
+    </footer>
 
-<footer>
-  <div class="ft-logo">
-    <div class="ico">🫓</div>
-    <span>Ха-Хачапури</span>
-  </div>
-  <div class="ft-links">
-    <a href="about.html">О нас</a>
-    <a href="news.html">Акции и новости</a>
-    <a href="contact.html">Обратная связь</a>
-  </div>
-  <div class="ft-social">
-    <a href="#" aria-label="ВКонтакте"><img src="images/icons/vk.svg" alt=""></a>
-    <a href="#" aria-label="Telegram"><img src="images/icons/telegram.svg" alt=""></a>
-  </div>
-</footer>
-
-<script src="js/reviews.js"></script>
-</body>
+    <script src="js/reviews.js"></script>
+  </body>
 </html>

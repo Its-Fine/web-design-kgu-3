@@ -1,120 +1,134 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ха-Хачапури — Акции и новости</title>
-<link rel="stylesheet" href="css/base.css">
-<link rel="stylesheet" href="css/layout.css">
-<link rel="stylesheet" href="css/components.css">
-<link rel="stylesheet" href="css/pages/news.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ха-Хачапури — Акции и новости</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/news.css">
+  </head>
+  <body>
+    <header class="nav">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🫓</span>
+        <span class="logo-text">Ха-Хачапури</span>
+      </a>
+      <nav class="nav-links">
+        <a href="about.html">О нас</a>
+        <a href="news.html" class="is-active">Акции и новости</a>
+        <a href="contact.html">Обратная связь</a>
+      </nav>
+      <a href="cart.html" class="nav-cart">Корзина</a>
+      <div class="lang"><span class="on">RU</span><span class="off">EN</span></div>
+    </header>
 
-<header class="nav">
-  <a href="index.html" class="nav-logo">
-    <div class="ico">🫓</div>
-    <span>Ха-Хачапури</span>
-  </a>
-  <nav class="nav-links">
-    <a href="about.html">О нас</a>
-    <a href="news.html" class="act">Акции и новости</a>
-    <a href="contact.html">Обратная связь</a>
-  </nav>
-  <a href="cart.html" class="nav-cart">Корзина</a>
-  <div class="lang"><span class="on">RU</span><span class="off">EN</span></div>
-</header>
+    <main>
+      <div class="wrap">
+        <!-- АКЦИИ -->
+        <section id="promo" aria-labelledby="promo-title">
+          <div class="badge" id="promo-title">Акции</div>
+          <div class="grid-two">
+            <article class="news-card">
+              <div class="news-image placeholder"></div>
+              <div class="news-body">
+                <div class="news-name">Скидка <mark>−30%</mark> на хинкали по вторникам</div>
+                <div class="news-description">
+                  Каждый <strong>вторник</strong> все виды хинкали со скидкой 30% при заказе от 20
+                  штук. <small>Акция действует до 31 декабря.</small>
+                </div>
+              </div>
+            </article>
+            <article class="news-card">
+              <div class="news-image placeholder"></div>
+              <div class="news-body">
+                <div class="news-name">Бесплатная доставка от <mark>1000 ₽</mark></div>
+                <div class="news-description">
+                  При заказе от 1000 рублей доставка <em>бесплатна</em> в пределах города.
+                  <small>Подробности уточняйте у оператора.</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
 
-<main>
-<div class="wrap">
+        <hr class="divider">
 
-  <!-- АКЦИИ -->
-  <section id="promo" aria-labelledby="promo-title">
-    <div class="badge" id="promo-title">Акции</div>
-    <div class="grid2">
-      <article class="nc">
-        <div class="ni ph"></div>
-        <div class="nb">
-          <div class="nn">Скидка <mark>−30%</mark> на хинкали по вторникам</div>
-          <div class="nd">Каждый <strong>вторник</strong> все виды хинкали со скидкой 30% при заказе от 20 штук.
-          <small>Акция действует до 31 декабря.</small></div>
-        </div>
-      </article>
-      <article class="nc">
-        <div class="ni ph"></div>
-        <div class="nb">
-          <div class="nn">Бесплатная доставка от <mark>1000 ₽</mark></div>
-          <div class="nd">При заказе от 1000 рублей доставка <em>бесплатна</em> в пределах города.
-          <small>Подробности уточняйте у оператора.</small></div>
-        </div>
-      </article>
-    </div>
-  </section>
+        <!-- НОВОСТИ -->
+        <section id="news" aria-labelledby="news-title">
+          <div class="badge" id="news-title">Новости</div>
+          <div class="grid-two">
+            <article class="news-card">
+              <div class="news-image placeholder"></div>
+              <div class="news-body">
+                <div class="news-name">Открылся новый зал</div>
+                <div class="news-description">
+                  Мы расширились! Теперь у нас <strong>вдвое больше мест</strong> для гостей и
+                  уютная летняя веранда. <small>01.09.2025</small>
+                </div>
+              </div>
+            </article>
+            <article class="news-card">
+              <div class="news-image placeholder"></div>
+              <div class="news-body">
+                <div class="news-name">Новое постное меню</div>
+                <div class="news-description">
+                  Добавили <em>более 10 новых постных блюд</em> — супы, салаты и выпечку без мяса и
+                  молочных продуктов. <small>15.08.2025</small>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
 
-  <hr class="divider">
+        <hr class="divider">
 
-  <!-- НОВОСТИ -->
-  <section id="news" aria-labelledby="news-title">
-    <div class="badge" id="news-title">Новости</div>
-    <div class="grid2">
-      <article class="nc">
-        <div class="ni ph"></div>
-        <div class="nb">
-          <div class="nn">Открылся новый зал</div>
-          <div class="nd">Мы расширились! Теперь у нас <strong>вдвое больше мест</strong> для гостей
-          и уютная летняя веранда. <small>01.09.2025</small></div>
-        </div>
-      </article>
-      <article class="nc">
-        <div class="ni ph"></div>
-        <div class="nb">
-          <div class="nn">Новое постное меню</div>
-          <div class="nd">Добавили <em>более 10 новых постных блюд</em> — супы, салаты и выпечку
-          без мяса и молочных продуктов. <small>15.08.2025</small></div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ВИДЕО СО СТОРОННЕГО РЕСУРСА -->
-  <section id="video" aria-labelledby="video-title">
-    <div class="badge" id="video-title">Видео: как готовят хинкали</div>
-    <div class="video-wrap">
-      <div class="vframe">
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
-          title="Как готовят хинкали — видео рецепт"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+        <!-- ВИДЕО СО СТОРОННЕГО РЕСУРСА -->
+        <section id="video" aria-labelledby="video-title">
+          <div class="badge" id="video-title">Видео: как готовят хинкали</div>
+          <div class="video-wrap">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+                title="Как готовят хинкали — видео рецепт"
+                loading="lazy"
+                allow="
+                  accelerometer;
+                  autoplay;
+                  clipboard-write;
+                  encrypted-media;
+                  gyroscope;
+                  picture-in-picture;
+                "
+                allowfullscreen
+              >
+              </iframe>
+            </div>
+            <p class="video-caption">
+              <strong>Смотрите</strong>, как наши повара вручную лепят настоящие грузинские хинкали
+              — <em>без спешки, по старинному рецепту</em>.
+              <small>Видео предоставлено сторонним ресурсом YouTube.</small>
+            </p>
+          </div>
+        </section>
       </div>
-      <p class="video-caption">
-        <strong>Смотрите</strong>, как наши повара вручную лепят настоящие грузинские хинкали —
-        <em>без спешки, по старинному рецепту</em>. <small>Видео предоставлено сторонним ресурсом YouTube.</small>
-      </p>
-    </div>
-  </section>
+    </main>
 
-</div>
-</main>
-
-<footer>
-  <div class="ft-logo">
-    <div class="ico">🫓</div>
-    <span>Ха-Хачапури</span>
-  </div>
-  <div class="ft-links">
-    <a href="about.html">О нас</a>
-    <a href="news.html">Акции и новости</a>
-    <a href="contact.html">Обратная связь</a>
-  </div>
-  <div class="ft-social">
-    <a href="#" aria-label="ВКонтакте"><img src="images/icons/vk.svg" alt=""></a>
-    <a href="#" aria-label="Telegram"><img src="images/icons/telegram.svg" alt=""></a>
-  </div>
-</footer>
-</body>
+    <footer>
+      <div class="footer-logo">
+        <span class="logo-icon">🫓</span>
+        <span class="logo-text">Ха-Хачапури</span>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">О нас</a>
+        <a href="news.html">Акции и новости</a>
+        <a href="contact.html">Обратная связь</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="ВКонтакте"><img src="images/icons/vk.svg" alt=""></a>
+        <a href="#" aria-label="Telegram"><img src="images/icons/telegram.svg" alt=""></a>
+      </div>
+    </footer>
+  </body>
 </html>
