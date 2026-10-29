@@ -96,6 +96,24 @@
   color: #fff;
 }
 
+.theme-toggle {
+  background: transparent;
+  border: 1.5px solid var(--txt);
+  border-radius: 24px;
+  color: var(--txt);
+  cursor: pointer;
+  font-family: var(--font-h);
+  font-size: .9rem;
+  margin-left: 14px;
+  padding: 6px 16px;
+  transition: background .2s, color .2s;
+}
+
+.theme-toggle:hover {
+  background: var(--txt);
+  color: var(--nav-bg);
+}
+
 /* ── Подвал ── */
 footer {
   align-items: center;

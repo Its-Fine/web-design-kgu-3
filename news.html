@@ -22,6 +22,9 @@
       </nav>
       <a href="cart.html" class="nav-cart">Корзина</a>
       <div class="lang"><span class="on">RU</span><span class="off">EN</span></div>
+      <button type="button" class="theme-toggle" id="theme-toggle" aria-pressed="false">
+        Тёмная тема
+      </button>
     </header>
 
     <main>
@@ -112,6 +115,21 @@
             </p>
           </div>
         </section>
+
+        <hr class="divider">
+
+        <!-- ПОДПИСКА НА НОВОСТИ -->
+        <section id="subscribe" aria-labelledby="subscribe-title">
+          <div class="badge" id="subscribe-title">Подписка на новости</div>
+          <form class="form-box subscribe-form" id="subscribe-form">
+            <div class="field">
+              <label for="subscribe-email">E-mail</label>
+              <input type="email" id="subscribe-email" placeholder="you@example.com" required>
+            </div>
+            <button type="submit" class="btn-submit">Подписаться</button>
+            <p class="subscribe-message" id="subscribe-message" role="status"></p>
+          </form>
+        </section>
       </div>
     </main>
 
@@ -130,5 +148,15 @@
         <a href="#" aria-label="Telegram"><img src="images/icons/telegram.svg" alt=""></a>
       </div>
     </footer>
+
+    <!-- СООБЩЕНИЕ О COOKIES -->
+    <div class="cookie-banner" id="cookie-banner" role="region" aria-label="Использование cookies">
+      <p>Используя данный сайт, вы даёте согласие на использование файлов cookies.</p>
+      <button type="button" class="btn-submit cookie-close" id="cookie-close">Понятно</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/news.js"></script>
+    <script src="js/cookies.js"></script>
   </body>
 </html>

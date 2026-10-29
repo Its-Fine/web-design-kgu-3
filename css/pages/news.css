@@ -78,3 +78,56 @@
   font-size: .85rem;
   margin-top: 12px;
 }
+
+/* подписка на новости */
+.subscribe-form {
+  margin-bottom: 34px;
+  max-width: 520px;
+}
+
+.subscribe-message {
+  color: var(--teal);
+  font-weight: 500;
+  margin-top: 14px;
+}
+
+.subscribe-message:empty {
+  display: none;
+}
+
+/* сообщение о cookies */
+.cookie-banner {
+  align-items: center;
+  background: var(--nav-bg);
+  border-radius: var(--r);
+  bottom: 20px;
+  box-shadow: var(--sh);
+  color: var(--txt);
+  display: flex;
+  gap: 18px;
+  left: 50%;
+  max-width: calc(100% - 32px);
+  padding: 14px 20px;
+  position: fixed;
+  transform: translateX(-50%);
+  width: 640px;
+  z-index: 200;
+}
+
+.cookie-banner p {
+  flex: 1;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+
+.cookie-banner .cookie-close {
+  flex-shrink: 0;
+  padding: 10px 26px;
+}
+
+@media (max-width: 560px) {
+  .cookie-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

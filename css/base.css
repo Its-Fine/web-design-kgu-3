@@ -18,6 +18,28 @@
   --font-sc: 'Marck Script', cursive;
   --font-h: 'Oswald', sans-serif;
   --font-b: 'Roboto', sans-serif;
+  --input-bg: #fff;
+}
+
+/* Тёмная тема: класс theme-dark ставится на <html> кнопкой переключения */
+.theme-dark {
+  --bg-grad: linear-gradient(180deg, #2b1612 0%, #33251f 50%, #1c1a19 100%);
+  --nav-bg: #221d1a;
+  --card: #2e2925;
+  --card2: #3a332d;
+  --ph: #4a4541;
+  --txt: #f0e6d3;
+  --txt-lt: #b5aa9c;
+  --sh: 0 4px 18px rgba(0, 0, 0, .45);
+  --input-bg: #3a332d;
+}
+
+.theme-dark mark {
+  color: #1e1e1e;
+}
+
+.theme-dark .footer-social a {
+  background: var(--teal);
 }
 
 *,
