@@ -96,22 +96,26 @@
   color: #fff;
 }
 
+/* Кнопка темы: кружок, в светлой теме залит наполовину, в тёмной — целиком */
 .theme-toggle {
-  background: transparent;
-  border: 1.5px solid var(--txt);
-  border-radius: 24px;
-  color: var(--txt);
+  background: linear-gradient(90deg, var(--txt) 50%, transparent 50%);
+  border: 2px solid var(--txt);
+  border-radius: 50%;
   cursor: pointer;
-  font-family: var(--font-h);
-  font-size: .9rem;
+  flex-shrink: 0;
+  height: 22px;
   margin-left: 14px;
-  padding: 6px 16px;
-  transition: background .2s, color .2s;
+  padding: 0;
+  transition: background .2s, transform .2s;
+  width: 22px;
 }
 
 .theme-toggle:hover {
+  transform: rotate(180deg);
+}
+
+.theme-dark .theme-toggle {
   background: var(--txt);
-  color: var(--nav-bg);
 }
 
 /* ── Подвал ── */
