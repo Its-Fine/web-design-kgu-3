@@ -1,0 +1,68 @@
+/* Личный кабинет */
+
+.wrap {
+  margin: 0 auto;
+  max-width: 860px;
+  padding: 36px 36px 56px;
+}
+
+/* аватар слева, поля справа */
+.profile {
+  align-items: start;
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 220px 1fr;
+}
+
+.profile h2 {
+  font-family: var(--font-h);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* ── Аватар ── */
+.profile-avatar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+.avatar {
+  border-radius: 50%;
+  box-shadow: var(--sh);
+  display: block;
+  height: 100px;
+  width: 100px;
+}
+
+.avatar-note {
+  color: var(--txt-lt);
+  font-size: .8rem;
+  line-height: 1.45;
+}
+
+.avatar-legend {
+  color: var(--txt-lt);
+  font-size: .74rem;
+  line-height: 1.6;
+  list-style: none;
+  text-align: left;
+}
+
+.avatar-legend b {
+  color: var(--txt);
+  font-weight: 500;
+}
+
+@media (max-width: 760px) {
+  .profile {
+    grid-template-columns: 1fr;
+  }
+
+  .wrap {
+    padding: 24px 16px 40px;
+  }
+}

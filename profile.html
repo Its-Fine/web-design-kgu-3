@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ха-Хачапури — Личный кабинет</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages/profile.css">
+    <script src="js/theme.js"></script>
+  </head>
+  <body>
+    <header class="nav">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-icon">🫓</span>
+        <span class="logo-text">Ха-Хачапури</span>
+      </a>
+      <nav class="nav-links">
+        <a href="about.html">О нас</a>
+        <a href="news.html">Акции и новости</a>
+        <a href="contact.html">Обратная связь</a>
+        <a href="profile.html" class="is-active">Кабинет</a>
+      </nav>
+      <a href="cart.html" class="nav-cart">Корзина</a>
+      <div class="lang"><span class="on">RU</span><span class="off">EN</span></div>
+      <button type="button" class="theme-toggle" id="theme-toggle"
+        aria-pressed="false" aria-label="Тёмная тема" title="Сменить тему"></button>
+    </header>
+
+    <main>
+      <div class="wrap">
+        <div class="badge">Личный кабинет</div>
+
+        <form class="form-box profile" action="#" method="post" id="profile-form">
+          <!-- АВАТАР -->
+          <div class="profile-avatar">
+            <canvas id="avatar" class="avatar" width="100" height="100"
+              role="img" aria-label="Сгенерированный аватар пользователя"></canvas>
+            <p class="avatar-note">
+              Аватар создаётся автоматически из ваших данных и меняется вместе с ними.
+            </p>
+            <ul class="avatar-legend">
+              <li><b>Узор</b> — хеш email</li>
+              <li><b>Цвет</b> — длина email</li>
+              <li><b>Фон</b> — цвета флага по коду страны</li>
+              <li><b>Точки</b> — сложность пароля</li>
+              <li><b>Буква</b> — первая буква никнейма или имени</li>
+            </ul>
+          </div>
+
+          <!-- ДАННЫЕ -->
+          <div class="profile-fields">
+            <h2>Мои данные</h2>
+
+            <div class="field">
+              <label for="name">Имя</label>
+              <input type="text" id="name" name="name" value="Андрей" autocomplete="name">
+            </div>
+
+            <div class="field">
+              <label for="nickname">Никнейм</label>
+              <input type="text" id="nickname" name="nickname" value="khachapuri_fan"
+                autocomplete="username">
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" value="andrey@example.ru"
+                autocomplete="email">
+            </div>
+
+            <div class="field">
+              <label for="phone">Телефон</label>
+              <input type="tel" id="phone" name="phone" value="+7 900 123-45-67"
+                autocomplete="tel">
+              <small class="hint">Попробуйте код +995, +380, +49 или +33.</small>
+            </div>
+
+            <div class="field">
+              <label for="password">Пароль</label>
+              <input type="password" id="password" name="password" value="hinkali2026"
+                autocomplete="new-password">
+              <small class="hint" id="password-strength"></small>
+            </div>
+
+            <button type="submit" class="btn-submit">Сохранить</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-logo">
+        <span class="logo-icon">🫓</span>
+        <span class="logo-text">Ха-Хачапури</span>
+      </div>
+      <div class="footer-links">
+        <a href="about.html">О нас</a>
+        <a href="news.html">Акции и новости</a>
+        <a href="contact.html">Обратная связь</a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="ВКонтакте"><img src="images/icons/vk.svg" alt=""></a>
+        <a href="#" aria-label="Telegram"><img src="images/icons/telegram.svg" alt=""></a>
+      </div>
+    </footer>
+
+    <script src="js/avatar.js"></script>
+  </body>
+</html>
